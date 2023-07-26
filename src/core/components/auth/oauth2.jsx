@@ -112,7 +112,6 @@ export default class Oauth2 extends React.Component {
       schema, getComponent, authSelectors, errSelectors, name, specSelectors
     } = this.props
     const Input = getComponent("Input")
-    const Row = getComponent("Row")
     const Col = getComponent("Col")
     const Button = getComponent("Button")
     const AuthError = getComponent("authError")
@@ -155,61 +154,8 @@ export default class Oauth2 extends React.Component {
         { ( flow === AUTH_FLOW_PASSWORD || flow === AUTH_FLOW_ACCESS_CODE || flow === AUTH_FLOW_APPLICATION ) && <p>Token URL:<code> { schema.get("tokenUrl") }</code></p> }
         <p className="flow">Flow: <code>{ flowToDisplay }</code></p>
 
-        {
-          flow !== AUTH_FLOW_PASSWORD ? null
-            : <Row>
-              <Row>
-                <label htmlFor="oauth_username">username:</label>
-                {
-                  isAuthorized ? <code> { this.state.username } </code>
-                    : <Col tablet={10} desktop={10}>
-                      <input id="oauth_username" type="text" data-name="username" onChange={ this.onInputChange } autoFocus/>
-                    </Col>
-                }
-              </Row>
-              {
-
-              }
-              <Row>
-                <label htmlFor="oauth_password">password:</label>
-                {
-                  isAuthorized ? <code> ****** </code>
-                    : <Col tablet={10} desktop={10}>
-                      <input id="oauth_password" type="password" data-name="password" onChange={ this.onInputChange }/>
-                    </Col>
-                }
-              </Row>
-              <Row>
-                <label htmlFor="password_type">Client credentials location:</label>
-                {
-                  isAuthorized ? <code> { this.state.passwordType } </code>
-                    : <Col tablet={10} desktop={10}>
-                      <select id="password_type" data-name="passwordType" onChange={ this.onInputChange }>
-                        <option value="basic">Authorization header</option>
-                        <option value="request-body">Request body</option>
-                      </select>
-                    </Col>
-                }
-              </Row>
-            </Row>
-        }
-        {
-          ( flow === AUTH_FLOW_APPLICATION || flow === AUTH_FLOW_IMPLICIT || flow === AUTH_FLOW_ACCESS_CODE || flow === AUTH_FLOW_PASSWORD ) &&
-          ( !isAuthorized || isAuthorized && this.state.clientId) && <Row>
-            <label htmlFor="client_id">client_id:</label>
-            {
-              isAuthorized ? <code> ****** </code>
-                           : <Col tablet={10} desktop={10}>
-                               <InitializedInput id="client_id"
-                                      type="text"
-                                      required={ flow === AUTH_FLOW_PASSWORD }
-                                      initialValue={ this.state.clientId }
-                                      data-name="clientId"
-                                      onChange={ this.onInputChange }/>
-                             </Col>
-            }
-          </Row>
-        }
+     
+     
 
         {
           ( (flow === AUTH_FLOW_APPLICATION || flow === AUTH_FLOW_ACCESS_CODE || flow === AUTH_FLOW_PASSWORD) && <Row>

@@ -48,7 +48,6 @@ export default class HttpAuth extends React.Component {
   render() {
     let { schema, getComponent, errSelectors, name } = this.props
     const Input = getComponent("Input")
-    const Row = getComponent("Row")
     const Col = getComponent("Col")
     const AuthError = getComponent("authError")
     const Markdown = getComponent("Markdown", true)
@@ -67,27 +66,7 @@ export default class HttpAuth extends React.Component {
             <JumpToPath path={[ "securityDefinitions", name ]} />
           </h4>
         { username && <h6>Authorized</h6> }
-        <Row>
-          <Markdown source={ schema.get("description") } />
-        </Row>
-        <Row>
-          <label>Username:</label>
-          {
-            username ? <code> { username } </code>
-              : <Col><Input type="text" required="required" name="username" aria-label="auth-basic-username" onChange={ this.onChange } autoFocus/></Col>
-          }
-        </Row>
-        <Row>
-          <label>Password:</label>
-            {
-              username ? <code> ****** </code>
-                       : <Col><Input autoComplete="new-password"
-                                     name="password"
-                                     type="password"
-                                     aria-label="auth-basic-password"
-                                     onChange={ this.onChange }/></Col>
-            }
-        </Row>
+       
         {
           errors.valueSeq().map( (error, key) => {
             return <AuthError error={ error }
@@ -106,16 +85,7 @@ export default class HttpAuth extends React.Component {
               <JumpToPath path={[ "securityDefinitions", name ]} />
             </h4>
             { value && <h6>Authorized</h6>}
-            <Row>
-              <Markdown source={ schema.get("description") } />
-            </Row>
-            <Row>
-              <label>Value:</label>
-              {
-                value ? <code> ****** </code>
-              : <Col><Input type="text" aria-label="auth-bearer-value" onChange={ this.onChange } autoFocus/></Col>
-          }
-        </Row>
+           
         {
           errors.valueSeq().map( (error, key) => {
             return <AuthError error={ error }

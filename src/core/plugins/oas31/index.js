@@ -1,7 +1,6 @@
 /**
  * @prettier
  */
-import Webhooks from "./components/webhooks"
 import License from "./components/license"
 import Contact from "./components/contact"
 import Info from "./components/info"
@@ -72,7 +71,6 @@ const OAS31Plugin = ({ fn }) => {
       createOnlyOAS31Selector: createOnlyOAS31SelectorFn,
     },
     components: {
-      Webhooks,
       JsonSchemaDialect,
       OAS31Info: Info,
       OAS31License: License,

@@ -12,7 +12,6 @@ const Callbacks = ({ callbacks, specPath, specSelectors, getComponent }) => {
   })
   const callbackNames = Object.keys(operationDTOs)
 
-  const OperationContainer = getComponent("OperationContainer", true)
 
   if (callbackNames.length === 0) return <span>No callbacks</span>
 
@@ -22,17 +21,7 @@ const Callbacks = ({ callbacks, specPath, specSelectors, getComponent }) => {
         <div key={`${callbackName}`}>
           <h2>{callbackName}</h2>
 
-          {operationDTOs[callbackName].map((operationDTO) => (
-            <OperationContainer
-              key={`${callbackName}-${operationDTO.path}-${operationDTO.method}`}
-              op={operationDTO.operation}
-              tag="callbacks"
-              method={operationDTO.method}
-              path={operationDTO.path}
-              specPath={operationDTO.specPath}
-              allowTryItOut={false}
-            />
-          ))}
+        
         </div>
       ))}
     </div>

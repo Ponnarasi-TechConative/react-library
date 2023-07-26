@@ -13,7 +13,6 @@ export default class AuthorizeBtn extends React.Component {
     let { isAuthorized, showPopup, onClick, getComponent } = this.props
 
     //must be moved out of button component
-    const AuthorizationPopup = getComponent("authorizationPopup", true)
 
     return (
       <div className="auth-wrapper">
@@ -23,7 +22,6 @@ export default class AuthorizeBtn extends React.Component {
             <use href={ isAuthorized ? "#locked" : "#unlocked" } xlinkHref={ isAuthorized ? "#locked" : "#unlocked" } />
           </svg>
         </button>
-      { showPopup && <AuthorizationPopup /> }
       </div>
     )
   }

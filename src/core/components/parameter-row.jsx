@@ -215,9 +215,6 @@ export default class ParameterRow extends Component {
     const ModelExample = getComponent("modelExample")
     const Markdown = getComponent("Markdown", true)
     const ParameterExt = getComponent("ParameterExt")
-    const ParameterIncludeEmpty = getComponent("ParameterIncludeEmpty")
-    const ExamplesSelectValueRetainer = getComponent("ExamplesSelectValueRetainer")
-    const Example = getComponent("Example")
 
     let { schema } = getParameterSchema(param, { isOAS3 })
     let paramWithMeta = specSelectors.parameterWithMetaByIdentity(pathMethod, rawParam) || Map()
@@ -311,21 +308,7 @@ export default class ParameterRow extends Component {
 
           {(isFormData && !isFormDataSupported) && <div>Error: your browser does not support FormData</div>}
 
-          {
-            isOAS3 && param.get("examples") ? (
-              <section className="parameter-controls">
-                <ExamplesSelectValueRetainer
-                  examples={param.get("examples")}
-                  onSelect={this._onExampleSelect}
-                  updateValue={this.onChangeWrapper}
-                  getComponent={getComponent}
-                  defaultToFirstExample={true}
-                  currentKey={oas3Selectors.activeExamplesMember(...pathMethod, "parameters", this.getParamKey())}
-                  currentUserInputValue={value}
-                />
-              </section>
-            ) : null
-          }
+       
 
           { bodyParam ? null
             : <JsonSchemaForm fn={fn}
@@ -351,28 +334,7 @@ export default class ParameterRow extends Component {
                                                 includeWriteOnly={ true }/>
               : null
           }
-
-          {
-            !bodyParam && isExecute && param.get("allowEmptyValue") ?
-            <ParameterIncludeEmpty
-              onChange={this.onChangeIncludeEmpty}
-              isIncluded={specSelectors.parameterInclusionSettingFor(pathMethod, param.get("name"), param.get("in"))}
-              isDisabled={!isEmptyValue(value)} />
-            : null
-          }
-
-          {
-            isOAS3 && param.get("examples") ? (
-              <Example
-                example={param.getIn([
-                  "examples",
-                  oas3Selectors.activeExamplesMember(...pathMethod, "parameters", this.getParamKey())
-                ])}
-                getComponent={getComponent}
-                getConfigs={getConfigs}
-              />
-            ) : null
-          }
+        
 
         </td>
 

@@ -37,16 +37,11 @@ export default class OperationSummaryPath extends PureComponent{
       pathParts.splice(i, 0, <wbr key={i} />)
     }
 
-    const DeepLink = getComponent( "DeepLink" )
 
     return(
       <span className={ deprecated ? "opblock-summary-path__deprecated" : "opblock-summary-path" }
         data-path={path}>
-        <DeepLink
-            enabled={isDeepLinkingEnabled}
-            isShown={isShown}
-            path={createDeepLinkPath(`${tag}/${operationId}`)}
-            text={pathParts} />
+   
       </span>
 
     )

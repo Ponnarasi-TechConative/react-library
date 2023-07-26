@@ -72,9 +72,7 @@ const RequestBody = ({
   const ModelExample = getComponent("modelExample")
   const RequestBodyEditor = getComponent("RequestBodyEditor")
   const HighlightCode = getComponent("highlightCode")
-  const ExamplesSelectValueRetainer = getComponent("ExamplesSelectValueRetainer")
   const Example = getComponent("Example")
-  const ParameterIncludeEmpty = getComponent("ParameterIncludeEmpty")
 
   const { showCommonExtensions } = getConfigs()
 
@@ -220,14 +218,7 @@ const RequestBody = ({
                       onChange(value, [key])
                     }}
                   />
-                  {required ? null : (
-                    <ParameterIncludeEmpty
-                      onChange={(value) => onChangeIncludeEmpty(key, value)}
-                      isIncluded={included}
-                      isIncludedOptions={setIsIncludedOptions(key)}
-                      isDisabled={Array.isArray(currentValue) ? currentValue.length !== 0 : !isEmptyValue(currentValue)}
-                    />
-                  )}
+                
                 </div> : null }
               </td>
               </tr>
@@ -254,21 +245,7 @@ const RequestBody = ({
     { requestBodyDescription &&
       <Markdown source={requestBodyDescription} />
     }
-    {
-      sampleForMediaType ? (
-        <ExamplesSelectValueRetainer
-            userHasEditedBody={userHasEditedBody}
-            examples={sampleForMediaType}
-            currentKey={activeExamplesKey}
-            currentUserInputValue={requestBodyValue}
-            onSelect={handleExamplesSelect}
-            updateValue={onChange}
-            defaultToFirstExample={true}
-            getComponent={getComponent}
-            setRetainRequestBodyValueFlag={setRetainRequestBodyValueFlag}
-          />
-      ) : null
-    }
+   
     {
       isExecute ? (
         <div>
@@ -301,15 +278,7 @@ const RequestBody = ({
         />
       )
     }
-    {
-      sampleForMediaType ? (
-        <Example
-          example={sampleForMediaType.get(activeExamplesKey)}
-          getComponent={getComponent}
-          getConfigs={getConfigs}
-        />
-      ) : null
-    }
+    
   </div>
 }
 

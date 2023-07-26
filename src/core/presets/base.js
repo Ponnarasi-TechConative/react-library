@@ -18,10 +18,8 @@ import filter from "core/plugins/filter"
 import onComplete from "core/plugins/on-complete"
 import safeRender from "core/plugins/safe-render"
 
-import OperationContainer from "core/containers/OperationContainer"
 
 import App from "core/components/app"
-import AuthorizationPopup from "core/components/auth/authorization-popup"
 import AuthorizeBtn from "core/components/auth/authorize-btn"
 import AuthorizeBtnContainer from "core/containers/authorize-btn"
 import AuthorizeOperationBtn from "core/components/auth/authorize-operation-btn"
@@ -30,14 +28,10 @@ import AuthItem from "core/components/auth/auth-item"
 import AuthError from "core/components/auth/error"
 import ApiKeyAuth from "core/components/auth/api-key-auth"
 import BasicAuth from "core/components/auth/basic-auth"
-import Example from "core/components/example"
-import ExamplesSelect from "core/components/examples-select"
-import ExamplesSelectValueRetainer from "core/components/examples-select-value-retainer"
 import Oauth2 from "core/components/auth/oauth2"
 import Clear from "core/components/clear"
 import LiveResponse from "core/components/live-response"
 import OnlineValidatorBadge from "core/components/online-validator-badge"
-import OperationTag from "core/components/operation-tag"
 import Operation from "core/components/operation"
 import OperationSummary from "core/components/operation-summary"
 import OperationSummaryMethod from "core/components/operation-summary-method"
@@ -51,7 +45,6 @@ import ResponseExtension from "core/components/response-extension"
 import ResponseBody from "core/components/response-body"
 import { Parameters } from "core/components/parameters"
 import ParameterExt from "core/components/parameter-extension"
-import ParameterIncludeEmpty from "core/components/parameter-include-empty"
 import ParameterRow from "core/components/parameter-row"
 import Execute from "core/components/execute"
 import Headers from "core/components/headers"
@@ -64,11 +57,9 @@ import License from "core/components/license"
 import JumpToPath from "core/components/jump-to-path"
 import CopyToClipboardBtn from "core/components/copy-to-clipboard-btn"
 import Footer from "core/components/footer"
-import FilterContainer from "core/containers/filter"
 import ParamBody from "core/components/param-body"
 import Curl from "core/components/curl"
 import Schemes from "core/components/schemes"
-import SchemesContainer from "core/containers/schemes"
 import ModelCollapse from "core/components/model-collapse"
 import ModelExample from "core/components/model-example"
 import Model from "core/components/model"
@@ -80,7 +71,6 @@ import PrimitiveModel from "core/components/primitive-model"
 import Property from "core/components/property"
 import TryItOutButton from "core/components/try-it-out-button"
 import VersionStamp from "core/components/version-stamp"
-import DeepLink from "core/components/deep-link"
 import Markdown from "core/components/providers/markdown"
 import BaseLayout from "core/components/layouts/base"
 import * as LayoutUtils from "core/components/layout-utils"
@@ -90,7 +80,6 @@ export default function () {
   let coreComponents = {
     components: {
       App,
-      authorizationPopup: AuthorizationPopup,
       authorizeBtn: AuthorizeBtn,
       AuthorizeBtnContainer,
       authorizeOperationBtn: AuthorizeOperationBtn,
@@ -127,11 +116,9 @@ export default function () {
       errors: Errors,
       contentType: ContentType,
       footer: Footer,
-      FilterContainer,
       ParamBody: ParamBody,
       curl: Curl,
       schemes: Schemes,
-      SchemesContainer,
       modelExample: ModelExample,
       ModelCollapse,
       Model,
@@ -148,14 +135,7 @@ export default function () {
       OperationExt,
       OperationExtRow,
       ParameterExt,
-      ParameterIncludeEmpty,
-      OperationTag,
-      OperationContainer,
-      DeepLink,
-      Example,
-      ExamplesSelect,
-      ExamplesSelectValueRetainer,
-    },
+      },
   }
 
   let formComponents = {

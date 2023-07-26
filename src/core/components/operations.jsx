@@ -47,44 +47,9 @@ export default class Operations extends React.Component {
       getConfigs,
     } = this.props
     const validOperationMethods = specSelectors.validOperationMethods()
-    const OperationContainer = getComponent("OperationContainer", true)
-    const OperationTag = getComponent("OperationTag")
     const operations = tagObj.get("operations")
     return (
-      <OperationTag
-        key={"operation-" + tag}
-        tagObj={tagObj}
-        tag={tag}
-        oas3Selectors={oas3Selectors}
-        layoutSelectors={layoutSelectors}
-        layoutActions={layoutActions}
-        getConfigs={getConfigs}
-        getComponent={getComponent}
-        specUrl={specSelectors.url()}>
-        <div className="operation-tag-content">
-          {
-            operations.map(op => {
-              const path = op.get("path")
-              const method = op.get("method")
-              const specPath = Im.List(["paths", path, method])
-
-              if (validOperationMethods.indexOf(method) === -1) {
-                return null
-              }
-
-              return (
-                <OperationContainer
-                  key={`${path}-${method}`}
-                  specPath={specPath}
-                  op={op}
-                  path={path}
-                  method={method}
-                  tag={tag} />
-              )
-            }).toArray()
-          }
-        </div>
-      </OperationTag>
+      <></>
     )
   }
 

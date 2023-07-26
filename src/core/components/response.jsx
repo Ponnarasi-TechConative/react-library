@@ -106,8 +106,6 @@ export default class Response extends React.Component {
     const ModelExample = getComponent("modelExample")
     const Markdown = getComponent("Markdown", true)
     const ContentType = getComponent("contentType")
-    const ExamplesSelect = getComponent("ExamplesSelect")
-    const Example = getComponent("Example")
 
 
     var schema, specPathWithPossibleSchema
@@ -211,26 +209,7 @@ export default class Response extends React.Component {
                   </small>
                 ) : null}
               </div>
-              {examplesForMediaType ? (
-                <div className="response-control-examples">
-                  <small className="response-control-examples__title">
-                    Examples
-                  </small>
-                  <ExamplesSelect
-                    examples={examplesForMediaType}
-                    currentExampleKey={this.getTargetExamplesKey()}
-                    onSelect={key =>
-                      oas3Actions.setActiveExamplesMember({
-                        name: key,
-                        pathMethod: [path, method],
-                        contextType: "responses",
-                        contextName: code
-                      })
-                    }
-                    showLabels={false}
-                  />
-                </div>
-              ) : null}
+             
             </section>
           ) : null}
 
@@ -245,14 +224,6 @@ export default class Response extends React.Component {
               includeReadOnly={ true }/>
           ) : null }
 
-          { isOAS3 && examplesForMediaType ? (
-              <Example
-                example={examplesForMediaType.get(this.getTargetExamplesKey(), Map({}))}
-                getComponent={getComponent}
-                getConfigs={getConfigs}
-                omitValue={true}
-              />
-          ) : null}
 
           { headers ? (
             <Headers

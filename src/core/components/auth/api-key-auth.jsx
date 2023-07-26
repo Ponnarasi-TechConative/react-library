@@ -41,7 +41,6 @@ export default class ApiKeyAuth extends React.Component {
   render() {
     let { schema, getComponent, errSelectors, name } = this.props
     const Input = getComponent("Input")
-    const Row = getComponent("Row")
     const Col = getComponent("Col")
     const AuthError = getComponent("authError")
     const Markdown = getComponent("Markdown", true)
@@ -56,22 +55,7 @@ export default class ApiKeyAuth extends React.Component {
           <JumpToPath path={[ "securityDefinitions", name ]} />
         </h4>
         { value && <h6>Authorized</h6>}
-        <Row>
-          <Markdown source={ schema.get("description") } />
-        </Row>
-        <Row>
-          <p>Name: <code>{ schema.get("name") }</code></p>
-        </Row>
-        <Row>
-          <p>In: <code>{ schema.get("in") }</code></p>
-        </Row>
-        <Row>
-          <label>Value:</label>
-          {
-            value ? <code> ****** </code>
-                  : <Col><Input type="text" onChange={ this.onChange } autoFocus/></Col>
-          }
-        </Row>
+        
         {
           errors.valueSeq().map( (error, key) => {
             return <AuthError error={ error }

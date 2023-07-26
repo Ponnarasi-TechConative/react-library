@@ -15,7 +15,6 @@ export default class XPane extends React.Component {
     let Header = getComponent("header", true)
 
     let Container = getComponent("Container")
-    let Row = getComponent("Row")
     let Col = getComponent("Col")
     let Button = getComponent("Button")
 
@@ -36,15 +35,7 @@ export default class XPane extends React.Component {
         <Button onClick={showEditorAction}>{showEditor ? "Hide" : "Show"} Editor</Button>
         <Button onClick={specActions.formatIntoYaml}>Format contents</Button>
 
-        <Row>
-
-          <Col hide={!showEditor} keepContents={true} desktop={5} >
-            <Editor/>
-          </Col>
-
        
-
-        </Row>
 
         <Footer></Footer>
 

@@ -17,15 +17,9 @@ export default class BaseLayout extends React.Component {
   render() {
     const { errSelectors, specSelectors, getComponent } = this.props
 
-    const Webhooks = getComponent("Webhooks", true)
-    const Row = getComponent("Row")
     const Col = getComponent("Col")
-    const Errors = getComponent("errors", true)
 
-    const ServersContainer = getComponent("ServersContainer", true)
-    const SchemesContainer = getComponent("SchemesContainer", true)
     const AuthorizeBtnContainer = getComponent("AuthorizeBtnContainer", true)
-    const FilterContainer = getComponent("FilterContainer", true)
     const isSwagger2 = specSelectors.isSwagger2()
     const isOAS3 = specSelectors.isOAS3()
     const isOAS31 = specSelectors.isOAS31()
@@ -51,7 +45,6 @@ export default class BaseLayout extends React.Component {
         <div className="info">
           <div className="loading-container">
             <h4 className="title">Failed to load API definition.</h4>
-            <Errors />
           </div>
         </div>
       )
@@ -92,27 +85,18 @@ export default class BaseLayout extends React.Component {
     return (
       <div className="swagger-ui">
      
-          <Errors />
 
           {hasServers || hasSchemes || hasSecurityDefinitions ? (
             <div className="scheme-container">
               <Col className="schemes wrapper" mobile={12}>
-                {hasServers ? <ServersContainer /> : null}
-                {hasSchemes ? <SchemesContainer /> : null}
+              
                 {hasSecurityDefinitions ? <AuthorizeBtnContainer /> : null}
               </Col>
             </div>
           ) : null}
 
-          <FilterContainer />
 
-          {isOAS31 && (
-            <Row className="webhooks-container">
-              <Col mobile={12} desktop={12}>
-                <Webhooks />
-              </Col>
-            </Row>
-          )}
+         
       </div>
     )
   }

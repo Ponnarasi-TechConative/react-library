@@ -49,7 +49,6 @@ export default class BasicAuth extends React.Component {
   render() {
     let { schema, getComponent, name, errSelectors } = this.props
     const Input = getComponent("Input")
-    const Row = getComponent("Row")
     const Col = getComponent("Col")
     const AuthError = getComponent("authError")
     const JumpToPath = getComponent("JumpToPath", true)
@@ -61,26 +60,8 @@ export default class BasicAuth extends React.Component {
       <div>
         <h4>Basic authorization<JumpToPath path={[ "securityDefinitions", name ]} /></h4>
         { username && <h6>Authorized</h6> }
-        <Row>
-          <Markdown source={ schema.get("description") } />
-        </Row>
-        <Row>
-          <label>Username:</label>
-          {
-            username ? <code> { username } </code>
-                     : <Col><Input type="text" required="required" name="username" onChange={ this.onChange } autoFocus/></Col>
-          }
-        </Row>
-        <Row>
-          <label>Password:</label>
-            {
-              username ? <code> ****** </code>
-                       : <Col><Input autoComplete="new-password"
-                                     name="password"
-                                     type="password"
-                                     onChange={ this.onChange }/></Col>
-            }
-        </Row>
+        
+    
         {
           errors.valueSeq().map( (error, key) => {
             return <AuthError error={ error }
