@@ -27,34 +27,10 @@ import Auths from "core/components/auth/auths"
 import AuthItem from "core/components/auth/auth-item"
 import AuthError from "core/components/auth/error"
 import ApiKeyAuth from "core/components/auth/api-key-auth"
-import BasicAuth from "core/components/auth/basic-auth"
 import Oauth2 from "core/components/auth/oauth2"
 import Clear from "core/components/clear"
-import LiveResponse from "core/components/live-response"
-import OnlineValidatorBadge from "core/components/online-validator-badge"
-import Operation from "core/components/operation"
-import OperationSummary from "core/components/operation-summary"
-import OperationSummaryMethod from "core/components/operation-summary-method"
-import OperationSummaryPath from "core/components/operation-summary-path"
-import HighlightCode from "core/components/highlight-code"
-import Responses from "core/components/responses"
-import Response from "core/components/response"
-import ResponseExtension from "core/components/response-extension"
-import ResponseBody from "core/components/response-body"
-import { Parameters } from "core/components/parameters"
-import ParameterRow from "core/components/parameter-row"
-import Execute from "core/components/execute"
 import Headers from "core/components/headers"
 import Errors from "core/components/errors"
-import ContentType from "core/components/content-type"
-import InitializedInput from "core/components/initialized-input"
-import Info, { InfoUrl, InfoBasePath } from "core/components/info"
-import Contact from "core/components/contact"
-import License from "core/components/license"
-import JumpToPath from "core/components/jump-to-path"
-import CopyToClipboardBtn from "core/components/copy-to-clipboard-btn"
-import Footer from "core/components/footer"
-import ParamBody from "core/components/param-body"
 import BaseLayout from "core/components/layouts/base"
 import * as LayoutUtils from "core/components/layout-utils"
 import * as JsonSchemaComponents from "core/json-schema-components"
@@ -71,35 +47,9 @@ export default function () {
       authError: AuthError,
       oauth2: Oauth2,
       apiKeyAuth: ApiKeyAuth,
-      basicAuth: BasicAuth,
       clear: Clear,
-      liveResponse: LiveResponse,
-      InitializedInput,
-      info: Info,
-      InfoUrl,
-      InfoBasePath,
-      Contact,
-      License,
-      JumpToPath,
-      CopyToClipboardBtn,
-      onlineValidatorBadge: OnlineValidatorBadge,
-      operation: Operation,
-      OperationSummary,
-      OperationSummaryMethod,
-      OperationSummaryPath,
-      highlightCode: HighlightCode,
-      responses: Responses,
-      response: Response,
-      ResponseExtension: ResponseExtension,
-      responseBody: ResponseBody,
-      parameters: Parameters,
-      parameterRow: ParameterRow,
-      execute: Execute,
       headers: Headers,
       errors: Errors,
-      contentType: ContentType,
-      footer: Footer,
-      ParamBody: ParamBody,
       BaseLayout,
       },
   }

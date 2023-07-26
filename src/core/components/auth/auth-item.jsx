@@ -22,7 +22,6 @@ export default class Auths extends React.Component {
       errSelectors
     } = this.props
     const ApiKeyAuth = getComponent("apiKeyAuth")
-    const BasicAuth = getComponent("basicAuth")
 
     let authEl
 
@@ -37,13 +36,7 @@ export default class Auths extends React.Component {
                                         getComponent={ getComponent }
                                         onChange={ onAuthChange } />
         break
-      case "basic": authEl = <BasicAuth key={ name }
-                                      schema={ schema }
-                                      name={ name }
-                                      errSelectors={ errSelectors }
-                                      authorized={ authorized }
-                                      getComponent={ getComponent }
-                                      onChange={ onAuthChange } />
+      case "basic": authEl = <></>
         break
       default: authEl = <div key={ name }>Unknown security definition type { type }</div>
     }

@@ -11,7 +11,6 @@ export default class XPane extends React.Component {
 
     let Info = getComponent("info")
     let Editor = getComponent("editor", true)
-    let Footer = getComponent("footer", true)
     let Header = getComponent("header", true)
 
     let Container = getComponent("Container")
@@ -37,7 +36,6 @@ export default class XPane extends React.Component {
 
        
 
-        <Footer></Footer>
 
       </Container>
     )

@@ -115,8 +115,6 @@ export default class Oauth2 extends React.Component {
     const Col = getComponent("Col")
     const Button = getComponent("Button")
     const AuthError = getComponent("authError")
-    const JumpToPath = getComponent("JumpToPath", true)
-    const InitializedInput = getComponent("InitializedInput")
 
     const { isOAS3 } = specSelectors
 
@@ -142,7 +140,7 @@ export default class Oauth2 extends React.Component {
 
     return (
       <div>
-        <h4>{name} (OAuth2, { flowToDisplay }) <JumpToPath path={[ "securityDefinitions", name ]} /></h4>
+        <h4>{name} (OAuth2, { flowToDisplay }) </h4>
         { !this.state.appName ? null : <h5>Application: { this.state.appName } </h5> }
 
         { isAuthorized && <h6>Authorized</h6> }
@@ -158,16 +156,7 @@ export default class Oauth2 extends React.Component {
         {
           ( (flow === AUTH_FLOW_APPLICATION || flow === AUTH_FLOW_ACCESS_CODE || flow === AUTH_FLOW_PASSWORD) && <Row>
             <label htmlFor="client_secret">client_secret:</label>
-            {
-              isAuthorized ? <code> ****** </code>
-                           : <Col tablet={10} desktop={10}>
-                               <InitializedInput id="client_secret"
-                                      initialValue={ this.state.clientSecret }
-                                      type="password"
-                                      data-name="clientSecret"
-                                      onChange={ this.onInputChange }/>
-                             </Col>
-            }
+           
 
           </Row>
         )}

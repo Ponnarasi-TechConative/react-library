@@ -69,7 +69,6 @@ const RequestBody = ({
   }
 
   const RequestBodyEditor = getComponent("RequestBodyEditor")
-  const HighlightCode = getComponent("highlightCode")
   const Example = getComponent("Example")
 
   const { showCommonExtensions } = getConfigs()

@@ -1,8 +1,6 @@
 /**
  * @prettier
  */
-import License from "./components/license"
-import Contact from "./components/contact"
 import Info from "./components/info"
 import JsonSchemaDialect from "./components/json-schema-dialect"
 import LicenseWrapper from "./wrap-components/license"
@@ -71,8 +69,6 @@ const OAS31Plugin = ({ fn }) => {
     components: {
       JsonSchemaDialect,
       OAS31Info: Info,
-      OAS31License: License,
-      OAS31Contact: Contact,
       JSONSchema202012KeywordExample,
       JSONSchema202012KeywordXml,
       JSONSchema202012KeywordDiscriminator,

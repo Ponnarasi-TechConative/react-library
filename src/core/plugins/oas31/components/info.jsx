@@ -21,10 +21,6 @@ const Info = ({ getComponent, specSelectors }) => {
   const license = specSelectors.license()
 
   const Link = getComponent("Link")
-  const InfoUrl = getComponent("InfoUrl")
-  const InfoBasePath = getComponent("InfoBasePath")
-  const License = getComponent("License", true)
-  const Contact = getComponent("Contact", true)
   const JsonSchemaDialect = getComponent("JsonSchemaDialect", true)
 
   return (
@@ -34,8 +30,6 @@ const Info = ({ getComponent, specSelectors }) => {
           {title}
         </h2>
 
-        {(host || basePath) && <InfoBasePath host={host} basePath={basePath} />}
-        {url && <InfoUrl getComponent={getComponent} url={url} />}
       </hgroup>
 
       {summary && <p className="info__summary">{summary}</p>}
@@ -50,9 +44,7 @@ const Info = ({ getComponent, specSelectors }) => {
         </div>
       )}
 
-      {contact.size > 0 && <Contact />}
 
-      {license.size > 0 && <License />}
 
       {externalDocsUrl && (
         <Link

@@ -43,7 +43,6 @@ export default class ApiKeyAuth extends React.Component {
     const Input = getComponent("Input")
     const Col = getComponent("Col")
     const AuthError = getComponent("authError")
-    const JumpToPath = getComponent("JumpToPath", true)
     let value = this.getValue()
     let errors = errSelectors.allErrors().filter( err => err.get("authId") === name)
 
@@ -51,7 +50,6 @@ export default class ApiKeyAuth extends React.Component {
       <div>
         <h4>
           <code>{ name || schema.get("name") }</code>&nbsp;(apiKey)
-          <JumpToPath path={[ "securityDefinitions", name ]} />
         </h4>
         { value && <h6>Authorized</h6>}
         
