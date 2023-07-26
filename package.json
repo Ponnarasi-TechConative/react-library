@@ -46,7 +46,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:core": "webpack --color --config webpack/core.babel.js",
-    "build:es:bundle": "webpack --color --config webpack/es-bundle.babel.js"
+    "build:bundle": "webpack --color --config webpack/bundle.babel.js",
+    "dev": "webpack serve --config webpack/dev.babel.js"
   },
   "eslintConfig": {
     "extends": [
@@ -154,6 +155,7 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.15.0",
     "webpack-node-externals": "=3.0.0",
-    "webpack-stats-plugin": "=1.1.3"
+    "webpack-stats-plugin": "=1.1.3",
+    "yaml-loader": "^0.8.0"
   }
 }

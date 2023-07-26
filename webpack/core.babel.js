@@ -14,7 +14,7 @@ const result = configBuilder(
   {
     entry: {
       "swagger-ui": [
-        "./src/App.js",
+        "./src/index.js",
       ],
     },
 
@@ -49,7 +49,11 @@ const result = configBuilder(
                   limit: 8192
                 }
               }
-            }
+            },
+            {
+              test: /\.yaml$/,
+              use: 'yaml-loader',
+            },
         ]      
     }
   }
