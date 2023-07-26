@@ -16,7 +16,7 @@ export default class BaseLayout extends React.Component {
 
   render() {
     const { errSelectors, specSelectors, getComponent } = this.props
-
+    const Row = getComponent("Row")
     const Col = getComponent("Col")
 
     const isSwagger2 = specSelectors.isSwagger2()
@@ -62,9 +62,9 @@ export default class BaseLayout extends React.Component {
       )
     }
 
-    if (!loadingMessage && isSpecEmpty) {
-      loadingMessage = <h4>No API definition provided.</h4>
-    }
+    // if (!loadingMessage && isSpecEmpty) {
+    //   loadingMessage = <h4>No API definition provided.</h4>
+    // }
 
     if (loadingMessage) {
       return (
@@ -80,11 +80,11 @@ export default class BaseLayout extends React.Component {
     const hasServers = servers && servers.size
     const hasSchemes = schemes && schemes.size
     const hasSecurityDefinitions = !!specSelectors.securityDefinitions()
-
+    const handleClick = () => {
+      alert('Button Clicked')
+    }
     return (
       <div className="swagger-ui">
-     
-
           {hasServers || hasSchemes || hasSecurityDefinitions ? (
             <div className="scheme-container">
               <Col className="schemes wrapper" mobile={12}>
@@ -93,7 +93,11 @@ export default class BaseLayout extends React.Component {
             </div>
           ) : null}
 
-
+        <Row className="information-container">
+            <Col mobile={12}>
+              <button onClick={handleClick}>Click Me</button>
+            </Col>
+          </Row>
          
       </div>
     )
