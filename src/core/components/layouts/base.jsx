@@ -17,7 +17,6 @@ export default class BaseLayout extends React.Component {
   render() {
     const { errSelectors, specSelectors, getComponent } = this.props
 
-    const SvgAssets = getComponent("SvgAssets")
     const InfoContainer = getComponent("InfoContainer", true)
     const VersionPragmaFilter = getComponent("VersionPragmaFilter")
     const Operations = getComponent("operations", true)
@@ -96,7 +95,6 @@ export default class BaseLayout extends React.Component {
 
     return (
       <div className="swagger-ui">
-        <SvgAssets />
         <VersionPragmaFilter
           isSwagger2={isSwagger2}
           isOAS3={isOAS3}
