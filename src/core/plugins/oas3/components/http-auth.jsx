@@ -49,7 +49,6 @@ export default class HttpAuth extends React.Component {
     let { schema, getComponent, errSelectors, name } = this.props
     const Input = getComponent("Input")
     const Col = getComponent("Col")
-    const AuthError = getComponent("authError")
 
     const scheme = (schema.get("scheme") || "").toLowerCase()
     let value = this.getValue()
@@ -66,8 +65,7 @@ export default class HttpAuth extends React.Component {
        
         {
           errors.valueSeq().map( (error, key) => {
-            return <AuthError error={ error }
-                              key={ key }/>
+            return <></>
           } )
         }
       </div>
@@ -84,8 +82,7 @@ export default class HttpAuth extends React.Component {
            
         {
           errors.valueSeq().map( (error, key) => {
-            return <AuthError error={ error }
-              key={ key }/>
+            return <></>
           } )
         }
       </div>

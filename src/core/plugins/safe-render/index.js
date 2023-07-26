@@ -8,7 +8,6 @@ const safeRenderPlugin = ({componentList = [], fullOverride = false} = {}) => ({
   const defaultComponentList = [
     "App",
     "BaseLayout",
-    "AuthorizeBtnContainer",
     "Operations",
     "parameters",
     "responses",

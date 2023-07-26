@@ -17,20 +17,8 @@ import deepLinkingPlugin from "core/plugins/deep-linking"
 import filter from "core/plugins/filter"
 import onComplete from "core/plugins/on-complete"
 import safeRender from "core/plugins/safe-render"
-
-
 import App from "core/components/app"
-import AuthorizeBtn from "core/components/auth/authorize-btn"
-import AuthorizeBtnContainer from "core/containers/authorize-btn"
-import AuthorizeOperationBtn from "core/components/auth/authorize-operation-btn"
-import Auths from "core/components/auth/auths"
-import AuthItem from "core/components/auth/auth-item"
-import AuthError from "core/components/auth/error"
-import ApiKeyAuth from "core/components/auth/api-key-auth"
-import Oauth2 from "core/components/auth/oauth2"
-import Clear from "core/components/clear"
 import Headers from "core/components/headers"
-import Errors from "core/components/errors"
 import BaseLayout from "core/components/layouts/base"
 import * as LayoutUtils from "core/components/layout-utils"
 import * as JsonSchemaComponents from "core/json-schema-components"
@@ -39,17 +27,7 @@ export default function () {
   let coreComponents = {
     components: {
       App,
-      authorizeBtn: AuthorizeBtn,
-      AuthorizeBtnContainer,
-      authorizeOperationBtn: AuthorizeOperationBtn,
-      auths: Auths,
-      AuthItem: AuthItem,
-      authError: AuthError,
-      oauth2: Oauth2,
-      apiKeyAuth: ApiKeyAuth,
-      clear: Clear,
       headers: Headers,
-      errors: Errors,
       BaseLayout,
       },
   }

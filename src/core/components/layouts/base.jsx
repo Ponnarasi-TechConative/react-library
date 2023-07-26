@@ -19,7 +19,6 @@ export default class BaseLayout extends React.Component {
 
     const Col = getComponent("Col")
 
-    const AuthorizeBtnContainer = getComponent("AuthorizeBtnContainer", true)
     const isSwagger2 = specSelectors.isSwagger2()
     const isOAS3 = specSelectors.isOAS3()
     const isOAS31 = specSelectors.isOAS31()
@@ -90,7 +89,6 @@ export default class BaseLayout extends React.Component {
             <div className="scheme-container">
               <Col className="schemes wrapper" mobile={12}>
               
-                {hasSecurityDefinitions ? <AuthorizeBtnContainer /> : null}
               </Col>
             </div>
           ) : null}
