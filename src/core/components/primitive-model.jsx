@@ -38,9 +38,6 @@ export default class Primitive extends Component {
     let externalDocsUrl = schema.getIn(["externalDocs", "url"])
     let externalDocsDescription = schema.getIn(["externalDocs", "description"])
 
-    const EnumModel = getComponent("EnumModel")
-    const Property = getComponent("Property")
-    const ModelCollapse = getComponent("ModelCollapse")
     const Link = getComponent("Link")
 
     const titleEl = title &&
@@ -49,36 +46,7 @@ export default class Primitive extends Component {
       </span>
 
     return <span className="model">
-      <ModelCollapse title={titleEl} expanded={depth <= expandDepth} collapsedContent="[...]" hideSelfOnExpand={expandDepth !== depth}>
-        <span className="prop">
-          {name && depth > 1 && <span className="prop-name">{title}</span>}
-          <span className="prop-type">{type}</span>
-          {format && <span className="prop-format">(${format})</span>}
-          {
-            properties.size ? properties.entrySeq().map(([key, v]) => <Property key={`${key}-${v}`} propKey={key} propVal={v} propClass={propClass} />) : null
-          }
-          {
-            showExtensions && extensions.size ? extensions.entrySeq().map(([key, v]) => <Property key={`${key}-${v}`} propKey={key} propVal={v} propClass={propClass} />) : null
-          }
-       
-          {
-            externalDocsUrl &&
-            <div className="external-docs">
-               <Link target="_blank" href={sanitizeUrl(externalDocsUrl)}>{externalDocsDescription || externalDocsUrl}</Link>
-             </div>
-          }
-          {
-            xml && xml.size ? (<span><br /><span className={propClass}>xml:</span>
-              {
-                xml.entrySeq().map(([key, v]) => <span key={`${key}-${v}`} className={propClass}><br />&nbsp;&nbsp;&nbsp;{key}: {String(v)}</span>).toArray()
-              }
-            </span>) : null
-          }
-          {
-            enumArray && <EnumModel value={enumArray} getComponent={getComponent} />
-          }
-        </span>
-      </ModelCollapse>
+  
     </span>
   }
 }

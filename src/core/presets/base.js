@@ -55,18 +55,6 @@ import JumpToPath from "core/components/jump-to-path"
 import CopyToClipboardBtn from "core/components/copy-to-clipboard-btn"
 import Footer from "core/components/footer"
 import ParamBody from "core/components/param-body"
-import Curl from "core/components/curl"
-import Schemes from "core/components/schemes"
-import ModelCollapse from "core/components/model-collapse"
-import ModelExample from "core/components/model-example"
-import Model from "core/components/model"
-import Models from "core/components/models"
-import EnumModel from "core/components/enum-model"
-import ObjectModel from "core/components/object-model"
-import ArrayModel from "core/components/array-model"
-import PrimitiveModel from "core/components/primitive-model"
-import Property from "core/components/property"
-import TryItOutButton from "core/components/try-it-out-button"
 import BaseLayout from "core/components/layouts/base"
 import * as LayoutUtils from "core/components/layout-utils"
 import * as JsonSchemaComponents from "core/json-schema-components"
@@ -112,18 +100,6 @@ export default function () {
       contentType: ContentType,
       footer: Footer,
       ParamBody: ParamBody,
-      curl: Curl,
-      schemes: Schemes,
-      modelExample: ModelExample,
-      ModelCollapse,
-      Model,
-      Models,
-      EnumModel,
-      ObjectModel,
-      ArrayModel,
-      PrimitiveModel,
-      Property,
-      TryItOutButton,
       BaseLayout,
       },
   }

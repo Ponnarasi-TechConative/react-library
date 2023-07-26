@@ -103,7 +103,6 @@ export default class Response extends React.Component {
     const ResponseExtension = getComponent("ResponseExtension")
     const Headers = getComponent("headers")
     const HighlightCode = getComponent("highlightCode")
-    const ModelExample = getComponent("modelExample")
     const ContentType = getComponent("contentType")
 
 
@@ -209,16 +208,7 @@ export default class Response extends React.Component {
             </section>
           ) : null}
 
-          { example || schema ? (
-            <ModelExample
-              specPath={specPathWithPossibleSchema}
-              getComponent={ getComponent }
-              getConfigs={ getConfigs }
-              specSelectors={ specSelectors }
-              schema={ fromJSOrdered(schema) }
-              example={ example }
-              includeReadOnly={ true }/>
-          ) : null }
+      
 
 
           { headers ? (

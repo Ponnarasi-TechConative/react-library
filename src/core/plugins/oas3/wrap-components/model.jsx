@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { OAS3ComponentWrapFactory } from "../helpers"
-import Model from "core/components/model"
 
 class ModelComponent extends Component {
   static propTypes = {
@@ -28,11 +27,7 @@ class ModelComponent extends Component {
 
     return <div className={classes.join(" ")}>
       {message}
-      <Model { ...this.props }
-        getConfigs={ getConfigs }
-        depth={ 1 }
-        expandDepth={ this.props.expandDepth || 0 }
-        />
+     
     </div>
   }
 }

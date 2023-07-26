@@ -212,7 +212,6 @@ export default class ParameterRow extends Component {
                    pathMethod={ pathMethod }
       />
 
-    const ModelExample = getComponent("modelExample")
 
     let { schema } = getParameterSchema(param, { isOAS3 })
     let paramWithMeta = specSelectors.parameterWithMetaByIdentity(pathMethod, rawParam) || Map()
@@ -302,17 +301,7 @@ export default class ParameterRow extends Component {
           }
 
 
-          {
-            bodyParam && schema ? <ModelExample getComponent={ getComponent }
-                                                specPath={specPath.push("schema")}
-                                                getConfigs={ getConfigs }
-                                                isExecute={ isExecute }
-                                                specSelectors={ specSelectors }
-                                                schema={ schema }
-                                                example={ bodyParam }
-                                                includeWriteOnly={ true }/>
-              : null
-          }
+          
         
 
         </td>

@@ -112,7 +112,6 @@ export default class Parameters extends Component {
     } = this.props
 
     const ParameterRow = getComponent("parameterRow")
-    const TryItOutButton = getComponent("TryItOutButton")
     const ContentType = getComponent("contentType")
     const Callbacks = getComponent("Callbacks", true)
     const RequestBody = getComponent("RequestBody", true)
@@ -156,15 +155,7 @@ export default class Parameters extends Component {
               <h4 className="opblock-title">Parameters</h4>
             </div>
           )}
-          {allowTryItOut ? (
-            <TryItOutButton
-              isOAS3={specSelectors.isOAS3()}
-              hasUserEditedBody={oas3Selectors.hasUserEditedBody(...pathMethod)}
-              enabled={tryItOutEnabled}
-              onCancelClick={this.props.onCancelClick}
-              onTryoutClick={onTryoutClick}
-              onResetClick={() => onResetClick(pathMethod)}/>
-          ) : null}
+         
         </div>
         {this.state.parametersVisible ? <div className="parameters-container">
           {!groupedParametersArr.length ? <div className="opblock-description-wrapper"><p>No parameters</p></div> :

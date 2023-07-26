@@ -97,7 +97,6 @@ export default class Operation extends PureComponent {
     const Execute = getComponent( "execute" )
     const Clear = getComponent( "clear" )
     const Collapse = getComponent( "Collapse" )
-    const Schemes = getComponent( "schemes" )
     const OperationServers = getComponent( "OperationServers" )
     const OperationSummary = getComponent( "OperationSummary" )
     const Link = getComponent( "Link" )
@@ -164,14 +163,7 @@ export default class Operation extends PureComponent {
                 />
               }
 
-              {!tryItOutEnabled || !allowTryItOut ? null : schemes && schemes.size ? <div className="opblock-schemes">
-                    <Schemes schemes={ schemes }
-                             path={ path }
-                             method={ method }
-                             specActions={ specActions }
-                             currentScheme={ operationScheme } />
-                  </div> : null
-              }
+            
 
               { !tryItOutEnabled || !allowTryItOut || validationErrors.length <= 0 ? null : <div className="validation-errors errors-wrapper">
                   Please correct the following validation errors and try again.

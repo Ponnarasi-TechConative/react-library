@@ -68,7 +68,6 @@ const RequestBody = ({
     return options
   }
 
-  const ModelExample = getComponent("modelExample")
   const RequestBodyEditor = getComponent("RequestBodyEditor")
   const HighlightCode = getComponent("highlightCode")
   const Example = getComponent("Example")
@@ -251,24 +250,7 @@ const RequestBody = ({
           />
         </div>
       ) : (
-        <ModelExample
-          getComponent={ getComponent }
-          getConfigs={ getConfigs }
-          specSelectors={ specSelectors }
-          expandDepth={1}
-          isExecute={isExecute}
-          schema={mediaTypeValue.get("schema")}
-          specPath={specPath.push("content", contentType)}
-          example={
-            <HighlightCode
-              className="body-param__example"
-              getConfigs={getConfigs}
-              language={language}
-              value={stringify(requestBodyValue) || sampleRequestBody}
-            />
-          }
-          includeWriteOnly={true}
-        />
+        <></>
       )
     }
     
