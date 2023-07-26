@@ -52,7 +52,6 @@ export default class Models extends Component {
     let showModels = layoutSelectors.isShown(specPathBase, defaultModelsExpandDepth > 0 && docExpansion !== "none")
     const isOAS3 = specSelectors.isOAS3()
 
-    const ModelWrapper = getComponent("ModelWrapper")
     const Collapse = getComponent("Collapse")
     const ModelCollapse = getComponent("ModelCollapse")
     const JumpToPath = getComponent("JumpToPath", true)
@@ -92,19 +91,7 @@ export default class Models extends Component {
               this.props.specActions.requestResolvedSubtree(fullPath)
             }
 
-            const content = <ModelWrapper name={ name }
-              expandDepth={ defaultModelsExpandDepth }
-              schema={ schema || Im.Map() }
-              displayName={displayName}
-              fullPath={fullPath}
-              specPath={specPath}
-              getComponent={ getComponent }
-              specSelectors={ specSelectors }
-              getConfigs = {getConfigs}
-              layoutSelectors = {layoutSelectors}
-              layoutActions = {layoutActions}
-              includeReadOnly = {true}
-              includeWriteOnly = {true}/>
+          
 
             const title = <span className="model-box">
               <span className="model model-title">
@@ -127,7 +114,7 @@ export default class Models extends Component {
                 layoutActions={layoutActions}
                 hideSelfOnExpand={true}
                 expanded={ defaultModelsExpandDepth > 0 && isShown }
-                >{content}</ModelCollapse>
+                ></ModelCollapse>
               </div>
           }).toArray()
         }

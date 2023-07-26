@@ -105,7 +105,6 @@ export default class Response extends React.Component {
     const HighlightCode = getComponent("highlightCode")
     const ModelExample = getComponent("modelExample")
     const Markdown = getComponent("Markdown", true)
-    const OperationLink = getComponent("operationLink")
     const ContentType = getComponent("contentType")
     const ExamplesSelect = getComponent("ExamplesSelect")
     const Example = getComponent("Example")
@@ -264,11 +263,7 @@ export default class Response extends React.Component {
 
         </td>
         {isOAS3 ? <td className="response-col_links">
-          { links ?
-            links.toSeq().entrySeq().map(([key, link]) => {
-              return <OperationLink key={key} name={key} link={ link } getComponent={getComponent}/>
-            })
-          : <i>No links</i>}
+        
         </td> : null}
       </tr>
     )

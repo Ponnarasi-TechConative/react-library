@@ -10,8 +10,6 @@ export default class XPane extends React.Component {
     let showEditor = layoutSelectors.isShown("editor")
 
     let Info = getComponent("info")
-    let Operations = getComponent("operations", true)
-    let Overview = getComponent("overview", true)
     let Editor = getComponent("editor", true)
     let Footer = getComponent("footer", true)
     let Header = getComponent("header", true)
@@ -40,17 +38,11 @@ export default class XPane extends React.Component {
 
         <Row>
 
-          <Col desktop={3} >
-            <Overview/>
-          </Col>
-
           <Col hide={!showEditor} keepContents={true} desktop={5} >
             <Editor/>
           </Col>
 
-          <Col desktop={showEditor ? 4 : 9} >
-            <Operations/>
-          </Col>
+       
 
         </Row>
 

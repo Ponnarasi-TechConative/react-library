@@ -6,7 +6,6 @@ import License from "./components/license"
 import Contact from "./components/contact"
 import Info from "./components/info"
 import JsonSchemaDialect from "./components/json-schema-dialect"
-import VersionPragmaFilter from "./components/version-pragma-filter"
 import Model from "./components/model/model"
 import Models from "./components/models/models"
 import LicenseWrapper from "./wrap-components/license"
@@ -78,7 +77,6 @@ const OAS31Plugin = ({ fn }) => {
       OAS31Info: Info,
       OAS31License: License,
       OAS31Contact: Contact,
-      OAS31VersionPragmaFilter: VersionPragmaFilter,
       OAS31Model: Model,
       OAS31Models: Models,
       JSONSchema202012KeywordExample,

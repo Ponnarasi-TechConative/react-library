@@ -8,8 +8,6 @@ const safeRenderPlugin = ({componentList = [], fullOverride = false} = {}) => ({
   const defaultComponentList = [
     "App",
     "BaseLayout",
-    "VersionPragmaFilter",
-    "InfoContainer",
     "ServersContainer",
     "SchemesContainer",
     "AuthorizeBtnContainer",
@@ -20,7 +18,6 @@ const safeRenderPlugin = ({componentList = [], fullOverride = false} = {}) => ({
     "responses",
     "OperationServers",
     "Models",
-    "ModelWrapper",
   ]
   const mergedComponentList = fullOverride ? componentList : [...defaultComponentList, ...componentList]
   const wrapFactory = (Original, { fn }) => fn.withErrorBoundary(Original)

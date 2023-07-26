@@ -37,7 +37,6 @@ import Oauth2 from "core/components/auth/oauth2"
 import Clear from "core/components/clear"
 import LiveResponse from "core/components/live-response"
 import OnlineValidatorBadge from "core/components/online-validator-badge"
-import Operations from "core/components/operations"
 import OperationTag from "core/components/operation-tag"
 import Operation from "core/components/operation"
 import OperationSummary from "core/components/operation-summary"
@@ -58,10 +57,8 @@ import Execute from "core/components/execute"
 import Headers from "core/components/headers"
 import Errors from "core/components/errors"
 import ContentType from "core/components/content-type"
-import Overview from "core/components/overview"
 import InitializedInput from "core/components/initialized-input"
 import Info, { InfoUrl, InfoBasePath } from "core/components/info"
-import InfoContainer from "core/containers/info"
 import Contact from "core/components/contact"
 import License from "core/components/license"
 import JumpToPath from "core/components/jump-to-path"
@@ -74,7 +71,6 @@ import Schemes from "core/components/schemes"
 import SchemesContainer from "core/containers/schemes"
 import ModelCollapse from "core/components/model-collapse"
 import ModelExample from "core/components/model-example"
-import ModelWrapper from "core/components/model-wrapper"
 import Model from "core/components/model"
 import Models from "core/components/models"
 import EnumModel from "core/components/enum-model"
@@ -83,7 +79,6 @@ import ArrayModel from "core/components/array-model"
 import PrimitiveModel from "core/components/primitive-model"
 import Property from "core/components/property"
 import TryItOutButton from "core/components/try-it-out-button"
-import VersionPragmaFilter from "core/components/version-pragma-filter"
 import VersionStamp from "core/components/version-stamp"
 import DeepLink from "core/components/deep-link"
 import Markdown from "core/components/providers/markdown"
@@ -109,7 +104,6 @@ export default function () {
       liveResponse: LiveResponse,
       InitializedInput,
       info: Info,
-      InfoContainer,
       InfoUrl,
       InfoBasePath,
       Contact,
@@ -117,7 +111,6 @@ export default function () {
       JumpToPath,
       CopyToClipboardBtn,
       onlineValidatorBadge: OnlineValidatorBadge,
-      operations: Operations,
       operation: Operation,
       OperationSummary,
       OperationSummaryMethod,
@@ -133,7 +126,6 @@ export default function () {
       headers: Headers,
       errors: Errors,
       contentType: ContentType,
-      overview: Overview,
       footer: Footer,
       FilterContainer,
       ParamBody: ParamBody,
@@ -141,7 +133,6 @@ export default function () {
       schemes: Schemes,
       SchemesContainer,
       modelExample: ModelExample,
-      ModelWrapper,
       ModelCollapse,
       Model,
       Models,
@@ -153,7 +144,6 @@ export default function () {
       TryItOutButton,
       Markdown,
       BaseLayout,
-      VersionPragmaFilter,
       VersionStamp,
       OperationExt,
       OperationExtRow,

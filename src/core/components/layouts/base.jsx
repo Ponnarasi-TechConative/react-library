@@ -17,10 +17,6 @@ export default class BaseLayout extends React.Component {
   render() {
     const { errSelectors, specSelectors, getComponent } = this.props
 
-    const InfoContainer = getComponent("InfoContainer", true)
-    const VersionPragmaFilter = getComponent("VersionPragmaFilter")
-    const Operations = getComponent("operations", true)
-    const Models = getComponent("Models", true)
     const Webhooks = getComponent("Webhooks", true)
     const Row = getComponent("Row")
     const Col = getComponent("Col")
@@ -95,17 +91,8 @@ export default class BaseLayout extends React.Component {
 
     return (
       <div className="swagger-ui">
-        <VersionPragmaFilter
-          isSwagger2={isSwagger2}
-          isOAS3={isOAS3}
-          alsoShow={<Errors />}
-        >
+     
           <Errors />
-          <Row className="information-container">
-            <Col mobile={12}>
-              <InfoContainer />
-            </Col>
-          </Row>
 
           {hasServers || hasSchemes || hasSecurityDefinitions ? (
             <div className="scheme-container">
@@ -119,12 +106,6 @@ export default class BaseLayout extends React.Component {
 
           <FilterContainer />
 
-          <Row>
-            <Col mobile={12} desktop={12}>
-              <Operations />
-            </Col>
-          </Row>
-
           {isOAS31 && (
             <Row className="webhooks-container">
               <Col mobile={12} desktop={12}>
@@ -132,13 +113,6 @@ export default class BaseLayout extends React.Component {
               </Col>
             </Row>
           )}
-
-          <Row>
-            <Col mobile={12} desktop={12}>
-              <Models />
-            </Col>
-          </Row>
-        </VersionPragmaFilter>
       </div>
     )
   }
