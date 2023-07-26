@@ -6,7 +6,6 @@ import JsonSchemaDialect from "./components/json-schema-dialect"
 import LicenseWrapper from "./wrap-components/license"
 import ContactWrapper from "./wrap-components/contact"
 import InfoWrapper from "./wrap-components/info"
-import ModelWrapper from "./wrap-components/model"
 import ModelsWrapper from "./wrap-components/models"
 import VersionPragmaFilterWrapper from "./wrap-components/version-pragma-filter"
 import VersionStampWrapper from "./wrap-components/version-stamp"
@@ -80,7 +79,6 @@ const OAS31Plugin = ({ fn }) => {
       Contact: ContactWrapper,
       VersionPragmaFilter: VersionPragmaFilterWrapper,
       VersionStamp: VersionStampWrapper,
-      Model: ModelWrapper,
       Models: ModelsWrapper,
       JSONSchema202012KeywordDescription:
         JSONSchema202012KeywordDescriptionWrapper,

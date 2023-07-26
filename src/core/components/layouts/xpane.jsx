@@ -10,11 +10,9 @@ export default class XPane extends React.Component {
     let showEditor = layoutSelectors.isShown("editor")
 
     let Info = getComponent("info")
-    let Editor = getComponent("editor", true)
     let Header = getComponent("header", true)
 
     let Container = getComponent("Container")
-    let Col = getComponent("Col")
     let Button = getComponent("Button")
 
     let showEditorAction = ()=> layoutActions.show("editor", !showEditor)

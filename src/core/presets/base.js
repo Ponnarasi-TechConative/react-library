@@ -18,7 +18,6 @@ import filter from "core/plugins/filter"
 import onComplete from "core/plugins/on-complete"
 import safeRender from "core/plugins/safe-render"
 import App from "core/components/app"
-import Headers from "core/components/headers"
 import BaseLayout from "core/components/layouts/base"
 import * as LayoutUtils from "core/components/layout-utils"
 import * as JsonSchemaComponents from "core/json-schema-components"
@@ -27,7 +26,6 @@ export default function () {
   let coreComponents = {
     components: {
       App,
-      headers: Headers,
       BaseLayout,
       },
   }
