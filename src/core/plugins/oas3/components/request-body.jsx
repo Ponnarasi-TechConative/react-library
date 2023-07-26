@@ -68,7 +68,6 @@ const RequestBody = ({
     return options
   }
 
-  const Markdown = getComponent("Markdown", true)
   const ModelExample = getComponent("modelExample")
   const RequestBodyEditor = getComponent("RequestBodyEditor")
   const HighlightCode = getComponent("highlightCode")
@@ -137,14 +136,11 @@ const RequestBody = ({
     schemaForMediaType.get("properties", OrderedMap()).size > 0
   ) {
     const JsonSchemaForm = getComponent("JsonSchemaForm")
-    const ParameterExt = getComponent("ParameterExt")
     const bodyProperties = schemaForMediaType.get("properties", OrderedMap())
     requestBodyValue = Map.isMap(requestBodyValue) ? requestBodyValue : OrderedMap()
 
     return <div className="table-container">
-      { requestBodyDescription &&
-        <Markdown source={requestBodyDescription} />
-      }
+    
       <table>
         <tbody>
           {
@@ -196,14 +192,13 @@ const RequestBody = ({
                 <div className="parameter__type">
                   { type }
                   { format && <span className="prop-format">(${format})</span>}
-                  {!showCommonExtensions || !commonExt.size ? null : commonExt.entrySeq().map(([key, v]) => <ParameterExt key={`${key}-${v}`} xKey={key} xVal={v} />)}
+                 
                 </div>
                 <div className="parameter__deprecated">
                   { prop.get("deprecated") ? "deprecated": null }
                 </div>
               </td>
               <td className="parameters-col_description">
-                <Markdown source={ description }></Markdown>
                 {isExecute ? <div>
                   <JsonSchemaForm
                     fn={fn}
@@ -242,9 +237,7 @@ const RequestBody = ({
   }
 
   return <div>
-    { requestBodyDescription &&
-      <Markdown source={requestBodyDescription} />
-    }
+
    
     {
       isExecute ? (

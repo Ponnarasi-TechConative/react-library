@@ -86,9 +86,7 @@ class Info extends React.Component {
     const externalDocsDescription =
       externalDocs && externalDocs.get("description")
 
-    const Markdown = getComponent("Markdown", true)
     const Link = getComponent("Link")
-    const VersionStamp = getComponent("VersionStamp")
     const InfoUrl = getComponent("InfoUrl")
     const InfoBasePath = getComponent("InfoBasePath")
     const License = getComponent("License")
@@ -99,7 +97,6 @@ class Info extends React.Component {
         <hgroup className="main">
           <h2 className="title">
             {title}
-            {version && <VersionStamp version={version}></VersionStamp>}
           </h2>
           {host || basePath ? (
             <InfoBasePath host={host} basePath={basePath} />
@@ -107,9 +104,7 @@ class Info extends React.Component {
           {url && <InfoUrl getComponent={getComponent} url={url} />}
         </hgroup>
 
-        <div className="description">
-          <Markdown source={description} />
-        </div>
+    
 
         {termsOfServiceUrl && (
           <div className="info__tos">

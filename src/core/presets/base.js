@@ -36,15 +36,12 @@ import Operation from "core/components/operation"
 import OperationSummary from "core/components/operation-summary"
 import OperationSummaryMethod from "core/components/operation-summary-method"
 import OperationSummaryPath from "core/components/operation-summary-path"
-import OperationExt from "core/components/operation-extensions"
-import OperationExtRow from "core/components/operation-extension-row"
 import HighlightCode from "core/components/highlight-code"
 import Responses from "core/components/responses"
 import Response from "core/components/response"
 import ResponseExtension from "core/components/response-extension"
 import ResponseBody from "core/components/response-body"
 import { Parameters } from "core/components/parameters"
-import ParameterExt from "core/components/parameter-extension"
 import ParameterRow from "core/components/parameter-row"
 import Execute from "core/components/execute"
 import Headers from "core/components/headers"
@@ -70,8 +67,6 @@ import ArrayModel from "core/components/array-model"
 import PrimitiveModel from "core/components/primitive-model"
 import Property from "core/components/property"
 import TryItOutButton from "core/components/try-it-out-button"
-import VersionStamp from "core/components/version-stamp"
-import Markdown from "core/components/providers/markdown"
 import BaseLayout from "core/components/layouts/base"
 import * as LayoutUtils from "core/components/layout-utils"
 import * as JsonSchemaComponents from "core/json-schema-components"
@@ -129,12 +124,7 @@ export default function () {
       PrimitiveModel,
       Property,
       TryItOutButton,
-      Markdown,
       BaseLayout,
-      VersionStamp,
-      OperationExt,
-      OperationExtRow,
-      ParameterExt,
       },
   }
 

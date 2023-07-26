@@ -20,9 +20,7 @@ const Info = ({ getComponent, specSelectors }) => {
   const contact = specSelectors.contact()
   const license = specSelectors.license()
 
-  const Markdown = getComponent("Markdown", true)
   const Link = getComponent("Link")
-  const VersionStamp = getComponent("VersionStamp")
   const InfoUrl = getComponent("InfoUrl")
   const InfoBasePath = getComponent("InfoBasePath")
   const License = getComponent("License", true)
@@ -34,7 +32,6 @@ const Info = ({ getComponent, specSelectors }) => {
       <hgroup className="main">
         <h2 className="title">
           {title}
-          {version && <VersionStamp version={version}></VersionStamp>}
         </h2>
 
         {(host || basePath) && <InfoBasePath host={host} basePath={basePath} />}
@@ -43,9 +40,7 @@ const Info = ({ getComponent, specSelectors }) => {
 
       {summary && <p className="info__summary">{summary}</p>}
 
-      <div className="info__description description">
-        <Markdown source={description} />
-      </div>
+
 
       {termsOfServiceUrl && (
         <div className="info__tos">

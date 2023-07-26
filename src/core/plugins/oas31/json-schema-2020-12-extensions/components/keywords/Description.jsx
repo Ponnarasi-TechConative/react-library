@@ -8,7 +8,6 @@ const Description = ({ schema, getSystem }) => {
   if (!schema?.description) return null
 
   const { getComponent } = getSystem()
-  const MarkDown = getComponent("Markdown")
 
   return (
     <div className="json-schema-2020-12-keyword json-schema-2020-12-keyword--description">

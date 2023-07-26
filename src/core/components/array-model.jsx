@@ -31,7 +31,6 @@ export default class ArrayModel extends Component {
     let externalDocsDescription = schema.getIn(["externalDocs", "description"])
 
 
-    const Markdown = getComponent("Markdown", true)
     const ModelCollapse = getComponent("ModelCollapse")
     const Model = getComponent("Model")
     const Property = getComponent("Property")
@@ -53,10 +52,7 @@ export default class ArrayModel extends Component {
           {
             properties.size ? properties.entrySeq().map( ( [ key, v ] ) => <Property key={`${key}-${v}`} propKey={ key } propVal={ v } propClass={ propClass } />) : null
           }
-          {
-            !description ? (properties.size ? <div className="markdown"></div> : null) :
-              <Markdown source={ description } />
-          }
+        
           { externalDocsUrl &&
             <div className="external-docs">
                <Link target="_blank" href={sanitizeUrl(externalDocsUrl)}>{externalDocsDescription || externalDocsUrl}</Link>

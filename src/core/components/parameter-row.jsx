@@ -213,8 +213,6 @@ export default class ParameterRow extends Component {
       />
 
     const ModelExample = getComponent("modelExample")
-    const Markdown = getComponent("Markdown", true)
-    const ParameterExt = getComponent("ParameterExt")
 
     let { schema } = getParameterSchema(param, { isOAS3 })
     let paramWithMeta = specSelectors.parameterWithMetaByIdentity(pathMethod, rawParam) || Map()
@@ -281,30 +279,11 @@ export default class ParameterRow extends Component {
             { isOAS3 && param.get("deprecated") ? "deprecated": null }
           </div>
           <div className="parameter__in">({ param.get("in") })</div>
-          { !showCommonExtensions || !commonExt.size ? null : commonExt.entrySeq().map(([key, v]) => <ParameterExt key={`${key}-${v}`} xKey={key} xVal={v} /> )}
-          { !showExtensions || !extensions.size ? null : extensions.entrySeq().map(([key, v]) => <ParameterExt key={`${key}-${v}`} xKey={key} xVal={v} /> )}
         </td>
 
         <td className="parameters-col_description">
-          { param.get("description") ? <Markdown source={ param.get("description") }/> : null }
 
-          { (bodyParam || !isExecute) && isDisplayParamEnum ?
-            <Markdown className="parameter__enum" source={
-                "<i>Available values</i> : " + paramEnum.map(function(item) {
-                    return item
-                  }).toArray().join(", ")}/>
-            : null
-          }
-
-          { (bodyParam || !isExecute) && paramDefaultValue !== undefined ?
-            <Markdown className="parameter__default" source={"<i>Default value</i> : " + paramDefaultValue}/>
-            : null
-          }
-
-          { (bodyParam || !isExecute) && paramExample !== undefined ?
-            <Markdown source={"<i>Example</i> : " + paramExample}/>
-            : null
-          }
+      
 
           {(isFormData && !isFormDataSupported) && <div>Error: your browser does not support FormData</div>}
 

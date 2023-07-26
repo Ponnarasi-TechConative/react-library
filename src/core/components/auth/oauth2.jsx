@@ -116,7 +116,6 @@ export default class Oauth2 extends React.Component {
     const Button = getComponent("Button")
     const AuthError = getComponent("authError")
     const JumpToPath = getComponent("JumpToPath", true)
-    const Markdown = getComponent("Markdown", true)
     const InitializedInput = getComponent("InitializedInput")
 
     const { isOAS3 } = specSelectors
@@ -145,7 +144,6 @@ export default class Oauth2 extends React.Component {
       <div>
         <h4>{name} (OAuth2, { flowToDisplay }) <JumpToPath path={[ "securityDefinitions", name ]} /></h4>
         { !this.state.appName ? null : <h5>Application: { this.state.appName } </h5> }
-        { description && <Markdown source={ schema.get("description") } /> }
 
         { isAuthorized && <h6>Authorized</h6> }
 

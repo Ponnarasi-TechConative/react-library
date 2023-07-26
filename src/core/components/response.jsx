@@ -104,7 +104,6 @@ export default class Response extends React.Component {
     const Headers = getComponent("headers")
     const HighlightCode = getComponent("highlightCode")
     const ModelExample = getComponent("modelExample")
-    const Markdown = getComponent("Markdown", true)
     const ContentType = getComponent("contentType")
 
 
@@ -177,9 +176,6 @@ export default class Response extends React.Component {
         </td>
         <td className="response-col_description">
 
-          <div className="response-col_description__inner">
-            <Markdown source={ response.get( "description" ) } />
-          </div>
 
           { !showExtensions || !extensions.size ? null : extensions.entrySeq().map(([key, v]) => <ResponseExtension key={`${key}-${v}`} xKey={key} xVal={v} /> )}
 

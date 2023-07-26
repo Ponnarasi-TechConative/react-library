@@ -97,10 +97,8 @@ export default class Operation extends PureComponent {
     const Execute = getComponent( "execute" )
     const Clear = getComponent( "clear" )
     const Collapse = getComponent( "Collapse" )
-    const Markdown = getComponent("Markdown", true)
     const Schemes = getComponent( "schemes" )
     const OperationServers = getComponent( "OperationServers" )
-    const OperationExt = getComponent( "OperationExt" )
     const OperationSummary = getComponent( "OperationSummary" )
     const Link = getComponent( "Link" )
 
@@ -125,27 +123,8 @@ export default class Operation extends PureComponent {
                 <img height={"32px"} width={"32px"} src={require("core/../img/rolling-load.svg")} className="opblock-loading-animation" />
               }
               { deprecated && <h4 className="opblock-title_normal"> Warning: Deprecated</h4>}
-              { description &&
-                <div className="opblock-description-wrapper">
-                  <div className="opblock-description">
-                    <Markdown source={ description } />
-                  </div>
-                </div>
-              }
-              {
-                externalDocsUrl ?
-                <div className="opblock-external-docs-wrapper">
-                  <h4 className="opblock-title_normal">Find more details</h4>
-                  <div className="opblock-external-docs">
-                    {externalDocs.description &&
-                      <span className="opblock-external-docs__description">
-                        <Markdown source={ externalDocs.description } />
-                      </span> 
-                    }
-                    <Link target="_blank" className="opblock-external-docs__link" href={sanitizeUrl(externalDocsUrl)}>{externalDocsUrl}</Link>
-                  </div>
-                </div> : null
-              }
+             
+            
 
               { !operation || !operation.size ? null :
                 <Parameters
@@ -246,10 +225,7 @@ export default class Operation extends PureComponent {
                     displayRequestDuration={ displayRequestDuration }
                     fn={fn} />
               }
-
-              { !showExtensions || !extensions.size ? null :
-                <OperationExt extensions={ extensions } getComponent={ getComponent } />
-              }
+           
             </div>
           </Collapse>
         </div>

@@ -49,7 +49,6 @@ export default class ObjectModel extends Component {
     let externalDocsDescription = schema.getIn(["externalDocs", "description"])
 
     const JumpToPath = getComponent("JumpToPath", true)
-    const Markdown = getComponent("Markdown", true)
     const Model = getComponent("Model")
     const ModelCollapse = getComponent("ModelCollapse")
     const Property = getComponent("Property")
@@ -89,14 +88,7 @@ export default class ObjectModel extends Component {
           <span className="inner-object">
             {
               <table className="model"><tbody>
-              {
-                !description ? null : <tr className="description">
-                    <td>description:</td>
-                    <td>
-                      <Markdown source={ description } />
-                    </td>
-                  </tr>
-              }
+             
               {
                 externalDocsUrl &&
                 <tr className={"external-docs"}>

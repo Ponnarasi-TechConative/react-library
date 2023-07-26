@@ -14,7 +14,6 @@ export default class Headers extends React.Component {
     let { headers, getComponent } = this.props
 
     const Property = getComponent("Property")
-    const Markdown = getComponent("Markdown", true)
 
     if ( !headers || !headers.size )
       return null
@@ -43,9 +42,7 @@ export default class Headers extends React.Component {
 
               return (<tr key={ key }>
                 <td className="header-col">{ key }</td>
-                <td className="header-col">{
-                  !description ? null : <Markdown source={ description } />
-                }</td>
+                
                 <td className="header-col">{ type } { schemaExample ? <Property propKey={ "Example" } propVal={ schemaExample } propClass={ propClass } /> : null }</td>
               </tr>)
             }).toArray()

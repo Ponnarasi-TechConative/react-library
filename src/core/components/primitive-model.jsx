@@ -38,7 +38,6 @@ export default class Primitive extends Component {
     let externalDocsUrl = schema.getIn(["externalDocs", "url"])
     let externalDocsDescription = schema.getIn(["externalDocs", "description"])
 
-    const Markdown = getComponent("Markdown", true)
     const EnumModel = getComponent("EnumModel")
     const Property = getComponent("Property")
     const ModelCollapse = getComponent("ModelCollapse")
@@ -61,10 +60,7 @@ export default class Primitive extends Component {
           {
             showExtensions && extensions.size ? extensions.entrySeq().map(([key, v]) => <Property key={`${key}-${v}`} propKey={key} propVal={v} propClass={propClass} />) : null
           }
-          {
-            !description ? null :
-              <Markdown source={description} />
-          }
+       
           {
             externalDocsUrl &&
             <div className="external-docs">
