@@ -18,7 +18,7 @@ export default class BaseLayout extends React.Component {
     const { errSelectors, specSelectors, getComponent } = this.props
     const Row = getComponent("Row")
     const Col = getComponent("Col")
-
+    const Increment = getComponent("increment", true)
     const isSwagger2 = specSelectors.isSwagger2()
     const isOAS3 = specSelectors.isOAS3()
     const isOAS31 = specSelectors.isOAS31()
@@ -85,20 +85,20 @@ export default class BaseLayout extends React.Component {
     }
     return (
       <div className="swagger-ui">
-          {hasServers || hasSchemes || hasSecurityDefinitions ? (
+          {/* {hasServers || hasSchemes || hasSecurityDefinitions ? (
             <div className="scheme-container">
               <Col className="schemes wrapper" mobile={12}>
                 Hello
               </Col>
             </div>
-          ) : null}
+          ) : null} */}
 
         <Row className="information-container">
             <Col mobile={12}>
               <button onClick={handleClick}>Click Me</button>
             </Col>
           </Row>
-         
+          <Increment />
       </div>
     )
   }
