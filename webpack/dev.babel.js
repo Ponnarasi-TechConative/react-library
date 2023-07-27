@@ -99,7 +99,7 @@ const devConfig = configBuilder(
         template: path.join(projectBasePath, "dev-helpers", "index.html"),
       }),
       new HtmlWebpackSkipAssetsPlugin({
-        skipAssets: [/swagger-ui\.js/],
+        skipAssets: [/rest-import\.js/],
       }),
     ].filter(Boolean),
 
