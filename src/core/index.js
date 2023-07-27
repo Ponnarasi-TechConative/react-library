@@ -1,5 +1,4 @@
 import deepExtend from "deep-extend"
-
 import System from "./system"
 import ApisPreset from "./presets/apis"
 import AllPlugins from "./plugins/all"
@@ -73,7 +72,7 @@ export default function SwaggerUI(opts) {
     // Initial set of plugins ( TODO rename this, or refactor - we don't need presets _and_ plugins. Its just there for performance.
     // Instead, we can compile the first plugin ( it can be a collection of plugins ), then batch the rest.
     presets: [
-      ApisPreset
+      
     ],
 
     // Plugins; ( loaded after presets )
