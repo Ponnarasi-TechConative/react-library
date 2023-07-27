@@ -3,7 +3,6 @@ import deepExtend from "deep-extend"
 import System from "./system"
 import ApisPreset from "./presets/apis"
 import AllPlugins from "./plugins/all"
-import { parseSearch } from "./utils"
 import win from "./window"
 
 // eslint-disable-next-line no-undef
@@ -109,7 +108,7 @@ export default function SwaggerUI(opts) {
     }
   }
 
-  let queryConfig = opts.queryConfigEnabled ? parseSearch() : {}
+  let queryConfig = opts.queryConfigEnabled ? {} : {}
 
   const domNode = opts.domNode
   delete opts.domNode

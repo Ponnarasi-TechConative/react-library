@@ -38,6 +38,7 @@ export default class BaseLayout extends React.Component {
           <div>3st Commit : 20:45</div>
           <div>4th Commit : 20:51</div>
           <div>5th Commit : 20:59</div>
+          <div>6th Commit : 21:10</div>
 
       </div>
     )
