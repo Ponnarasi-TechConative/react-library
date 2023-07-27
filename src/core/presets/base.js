@@ -8,10 +8,7 @@ import requestSnippets from "core/plugins/request-snippets"
 import logs from "core/plugins/logs"
 import swaggerJs from "core/plugins/swagger-js"
 import auth from "core/plugins/auth"
-import util from "core/plugins/util"
 import configsPlugin from "core/plugins/configs"
-import deepLinkingPlugin from "core/plugins/deep-linking"
-import filter from "core/plugins/filter"
 import safeRender from "core/plugins/safe-render"
 import App from "core/components/app"
 import BaseLayout from "core/components/layouts/base"
@@ -37,7 +34,6 @@ export default function () {
 
   return [
     configsPlugin,
-    util,
     logs,
     view,
     err,
@@ -47,8 +43,6 @@ export default function () {
     swaggerJs,
     jsonSchemaComponents,
     auth,
-    deepLinkingPlugin,
-    filter,
     requestSnippets,
     safeRender(),
   ]
