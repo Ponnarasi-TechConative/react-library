@@ -21,11 +21,12 @@ import App from "core/components/app"
 import BaseLayout from "core/components/layouts/base"
 import * as LayoutUtils from "core/components/layout-utils"
 import * as JsonSchemaComponents from "core/json-schema-components"
-
+import Increment from "core/components/increment"
 export default function () {
   let coreComponents = {
     components: {
       App,
+      increment: Increment,
       BaseLayout,
       },
   }
