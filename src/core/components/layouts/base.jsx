@@ -95,7 +95,7 @@ export default class BaseLayout extends React.Component {
 
         <Row className="information-container">
             <Col mobile={12}>
-              <button onClick={handleClick}>Click Me</button>
+              <button className="btn btn-secondary" onClick={handleClick}>Click Me</button>
             </Col>
           </Row>
           <Increment />
