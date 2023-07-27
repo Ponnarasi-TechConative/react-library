@@ -299,15 +299,7 @@ export const invalidateResolvedSubtreeCache = () => {
   }
 }
 
-export const validateParams = ( payload, isOAS3 ) =>{
-  return {
-    type: VALIDATE_PARAMS,
-    payload:{
-      pathMethod: payload,
-      isOAS3
-    }
-  }
-}
+
 
 export const updateEmptyParamInclusion = ( pathMethod, paramName, paramIn, includeEmptyValue ) =>{
   return {
