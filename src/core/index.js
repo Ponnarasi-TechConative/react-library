@@ -4,20 +4,11 @@ import System from "./system"
 import ApisPreset from "./presets/apis"
 import AllPlugins from "./plugins/all"
 import { parseSearch } from "./utils"
-import win from "./window"
 
 // eslint-disable-next-line no-undef
-const { GIT_DIRTY, GIT_COMMIT, PACKAGE_VERSION, BUILD_TIME } = buildInfo
 
 export default function SwaggerUI(opts) {
 
-  win.versions = win.versions || {}
-  win.versions.swaggerUi = {
-    version: PACKAGE_VERSION,
-    gitRevision: GIT_COMMIT,
-    gitDirty: GIT_DIRTY,
-    buildTimestamp: BUILD_TIME,
-  }
 
   const defaults = {
     // Some general settings, that we floated to the top
