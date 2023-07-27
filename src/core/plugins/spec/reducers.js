@@ -1,5 +1,5 @@
 import { fromJS, List } from "immutable"
-import { fromJSOrdered, validateParam, paramToValue } from "core/utils"
+import { fromJSOrdered, paramToValue } from "core/utils"
 import win from "../../window"
 
 // selector-in-reducer is suboptimal, but `operationWithMeta` is more of a helper
@@ -91,10 +91,7 @@ export default {
       return op.get("parameters", List()).reduce((res, param) => {
         const value = paramToValue(param, paramValues)
         const isEmptyValueIncluded = parameterInclusionSettingFor(state, pathMethod, param.get("name"), param.get("in"))
-        const errors = validateParam(param, value, {
-          bypassRequiredCheck: isEmptyValueIncluded,
-          isOAS3,
-        })
+        
         return res.setIn([paramToIdentifier(param), "errors"], fromJS(errors))
       }, paramMeta)
     })

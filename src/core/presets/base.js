@@ -5,12 +5,10 @@ import err from "core/plugins/err"
 import layout from "core/plugins/layout"
 import spec from "core/plugins/spec"
 import view from "core/plugins/view"
-import samples from "core/plugins/samples"
 import requestSnippets from "core/plugins/request-snippets"
 import logs from "core/plugins/logs"
 import swaggerJs from "core/plugins/swagger-js"
 import auth from "core/plugins/auth"
-import util from "core/plugins/util"
 import downloadUrlPlugin from "core/plugins/download-url"
 import configsPlugin from "core/plugins/configs"
 import deepLinkingPlugin from "core/plugins/deep-linking"
@@ -41,13 +39,11 @@ export default function () {
 
   return [
     configsPlugin,
-    util,
     logs,
     view,
     spec,
     err,
     layout,
-    samples,
     coreComponents,
     formComponents,
     swaggerJs,
