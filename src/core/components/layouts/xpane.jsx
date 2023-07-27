@@ -21,17 +21,6 @@ export default class XPane extends React.Component {
       <Container fullscreen>
 
         <Header/>
-
-        {
-          info && info.size ? <Info version={info.get("version")}
-                                    description={info.get("description")}
-                                    title={info.get("title")}
-                                    url={url}/>
-                            : null
-        }
-        <Button onClick={showEditorAction}>{showEditor ? "Hide" : "Show"} Editor</Button>
-        <Button onClick={specActions.formatIntoYaml}>Format contents</Button>
-
        
 
 

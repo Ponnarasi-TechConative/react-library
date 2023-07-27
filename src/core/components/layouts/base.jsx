@@ -18,12 +18,9 @@ export default class BaseLayout extends React.Component {
     const { errSelectors, specSelectors, getComponent } = this.props
     const Row = getComponent("Row")
     const Col = getComponent("Col")
+    // const Property = getComponent("Property")
+    const Increment = getComponent("increment", true)
 
-    const isSwagger2 = specSelectors.isSwagger2()
-    const isOAS3 = specSelectors.isOAS3()
-    const isOAS31 = specSelectors.isOAS31()
-
-    const isSpecEmpty = !specSelectors.specStr()
 
     const loadingStatus = specSelectors.loadingStatus()
 
@@ -62,13 +59,11 @@ export default class BaseLayout extends React.Component {
       )
     }
 
-    // if (!loadingMessage && isSpecEmpty) {
-    //   loadingMessage = <h4>No API definition provided.</h4>
-    // }
+
 
     if (loadingMessage) {
       return (
-        <div className="swagger-ui">
+        <div className="rest-import-ui">
           <div className="loading-container">{loadingMessage}</div>
         </div>
       )
@@ -84,21 +79,14 @@ export default class BaseLayout extends React.Component {
       alert('Button Clicked')
     }
     return (
-      <div className="swagger-ui">
-          {hasServers || hasSchemes || hasSecurityDefinitions ? (
-            <div className="scheme-container">
-              <Col className="schemes wrapper" mobile={12}>
-                Hello
-              </Col>
-            </div>
-          ) : null}
+      <div className="rest-import-ui">
 
         <Row className="information-container">
             <Col mobile={12}>
-              <button onClick={handleClick}>Click Me</button>
+              <button className="btn btn-secondary" onClick={handleClick}>Click Me</button>
             </Col>
-          </Row>
-         
+        </Row>
+        <Increment />
       </div>
     )
   }

@@ -21,7 +21,7 @@ export default class StandaloneLayout extends React.Component {
     const BaseLayout = getComponent("BaseLayout", true)
 
     return (
-      <Container className='swagger-ui'>
+      <Container className='rest-import-ui'>
         <BaseLayout />
       </Container>
     )
