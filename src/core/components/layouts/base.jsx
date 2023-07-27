@@ -19,86 +19,29 @@ export default class BaseLayout extends React.Component {
     const Row = getComponent("Row")
     const Col = getComponent("Col")
     const Increment = getComponent("increment", true)
-    const isSwagger2 = specSelectors.isSwagger2()
-    const isOAS3 = specSelectors.isOAS3()
-    const isOAS31 = specSelectors.isOAS31()
 
-    const isSpecEmpty = !specSelectors.specStr()
-
-    const loadingStatus = specSelectors.loadingStatus()
-
-    let loadingMessage = null
-
-    if (loadingStatus === "loading") {
-      loadingMessage = (
-        <div className="info">
-          <div className="loading-container">
-            <div className="loading"></div>
-          </div>
-        </div>
-      )
-    }
-
-    if (loadingStatus === "failed") {
-      loadingMessage = (
-        <div className="info">
-          <div className="loading-container">
-            <h4 className="title">Failed to load API definition.</h4>
-          </div>
-        </div>
-      )
-    }
-
-    if (loadingStatus === "failedConfig") {
-      const lastErr = errSelectors.lastError()
-      const lastErrMsg = lastErr ? lastErr.get("message") : ""
-      loadingMessage = (
-        <div className="info failed-config">
-          <div className="loading-container">
-            <h4 className="title">Failed to load remote configuration.</h4>
-            <p>{lastErrMsg}</p>
-          </div>
-        </div>
-      )
-    }
-
-    // if (!loadingMessage && isSpecEmpty) {
-    //   loadingMessage = <h4>No API definition provided.</h4>
-    // }
-
-    if (loadingMessage) {
-      return (
-        <div className="swagger-ui">
-          <div className="loading-container">{loadingMessage}</div>
-        </div>
-      )
-    }
-
-    const servers = specSelectors.servers()
-    const schemes = specSelectors.schemes()
-
-    const hasServers = servers && servers.size
-    const hasSchemes = schemes && schemes.size
-    const hasSecurityDefinitions = !!specSelectors.securityDefinitions()
+  
     const handleClick = () => {
       alert('Button Clicked')
     }
     return (
       <div className="swagger-ui">
-          {/* {hasServers || hasSchemes || hasSecurityDefinitions ? (
-            <div className="scheme-container">
-              <Col className="schemes wrapper" mobile={12}>
-                Hello
-              </Col>
-            </div>
-          ) : null} */}
 
         <Row className="information-container">
             <Col mobile={12}>
-              <button onClick={handleClick}>Click Me</button>
+              <button className="btn btn-primary" onClick={handleClick}>Click Me</button>
             </Col>
           </Row>
           <Increment />
+          <div>1st Commit : 20:35</div>
+          <div>2st Commit : 20:38</div>
+          <div>3st Commit : 20:45</div>
+          <div>4th Commit : 20:51</div>
+          <div>5th Commit : 20:59</div>
+          <div>6th Commit : 21:10</div>
+          <div>7th Commit : 21:32</div>
+          <div>8th Commit : 22:32</div>
+
       </div>
     )
   }

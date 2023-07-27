@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import get from "lodash/get"
 import isFunction from "lodash/isFunction"
 import { CopyToClipboard } from "react-copy-to-clipboard"
-import { SyntaxHighlighter, getStyle } from "core/syntax-highlighting"
 
 const style = {
   cursor: "pointer",
@@ -96,17 +95,7 @@ const RequestSnippets = ({ request, requestSnippetsSelectors, getConfigs }) => {
     }
   }
 
-  const SnippetComponent = canSyntaxHighlight
-    ? <SyntaxHighlighter
-      language={activeGenerator.get("syntax")}
-      className="curl microlight"
-      style={getStyle(get(config, "syntaxHighlight.theme"))}
-    >
-      {snippet}
-    </SyntaxHighlighter>
-    :
-    <textarea readOnly={true} className="curl" value={snippet}></textarea>
-
+ 
   return (
     <div className="request-snippets" ref={rootRef}>
       <div style={{ width: "100%", display: "flex", justifyContent: "flex-start", alignItems: "center", marginBottom: "15px" }}>
@@ -141,7 +130,6 @@ const RequestSnippets = ({ request, requestSnippetsSelectors, getConfigs }) => {
             </CopyToClipboard>
           </div>
           <div>
-            {SnippetComponent}
           </div>
         </div>
       }
