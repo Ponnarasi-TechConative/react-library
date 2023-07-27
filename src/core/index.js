@@ -39,34 +39,6 @@ export default function SwaggerUI(opts) {
     showCommonExtensions: false,
     withCredentials: undefined,
     requestSnippetsEnabled: false,
-    requestSnippets: {
-      generators: {
-        "curl_bash": {
-          title: "cURL (bash)",
-          syntax: "bash"
-        },
-        "curl_powershell": {
-          title: "cURL (PowerShell)",
-          syntax: "powershell"
-        },
-        "curl_cmd": {
-          title: "cURL (CMD)",
-          syntax: "bash"
-        },
-      },
-      defaultExpanded: true,
-      languages: null, // e.g. only show curl bash = ["curl_bash"]
-    },
-    supportedSubmitMethods: [
-      "get",
-      "put",
-      "post",
-      "delete",
-      "options",
-      "head",
-      "patch",
-      "trace"
-    ],
     queryConfigEnabled: false,
 
     // Initial set of plugins ( TODO rename this, or refactor - we don't need presets _and_ plugins. Its just there for performance.
