@@ -42,9 +42,9 @@ const result = configBuilder(
         // display full duplicates information? (Default: `false`)
         verbose: false,
       }),
-      new WebpackBundleSizeAnalyzerPlugin("log.bundle-sizes.swagger-ui.txt"),
+      new WebpackBundleSizeAnalyzerPlugin("log.bundle-sizes.rest-import-ui.txt"),
       // new StatsWriterPlugin({
-      //   filename: path.join("log.bundle-stats.swagger-ui.json"),
+      //   filename: path.join("log.bundle-stats.rest-import-ui.json"),
       //   fields: null,
       // }),
     ],

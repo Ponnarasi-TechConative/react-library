@@ -68,7 +68,7 @@ export default class BaseLayout extends React.Component {
 
     if (loadingMessage) {
       return (
-        <div className="swagger-ui">
+        <div className="rest-import-ui">
           <div className="loading-container">{loadingMessage}</div>
         </div>
       )
@@ -84,7 +84,7 @@ export default class BaseLayout extends React.Component {
       alert('Button Clicked')
     }
     return (
-      <div className="swagger-ui">
+      <div className="rest-import-ui">
           {/* {hasServers || hasSchemes || hasSecurityDefinitions ? (
             <div className="scheme-container">
               <Col className="schemes wrapper" mobile={12}>
@@ -95,7 +95,7 @@ export default class BaseLayout extends React.Component {
 
         <Row className="information-container">
             <Col mobile={12}>
-              <button onClick={handleClick}>Click Me</button>
+              <button className="btn btn-secondary" onClick={handleClick}>Click Me</button>
             </Col>
           </Row>
           <Increment />
