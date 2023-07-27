@@ -18,7 +18,7 @@ function makeWindow() {
       if (prop in window) {
         win[prop] = window[prop]
       }
-    }
+    } 
   } catch( e ) {
     console.error(e)
   }
