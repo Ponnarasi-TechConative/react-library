@@ -3,7 +3,6 @@
  */
 import err from "core/plugins/err"
 import layout from "core/plugins/layout"
-import spec from "core/plugins/spec"
 import view from "core/plugins/view"
 import requestSnippets from "core/plugins/request-snippets"
 import logs from "core/plugins/logs"
@@ -41,7 +40,6 @@ export default function () {
     util,
     logs,
     view,
-    spec,
     err,
     layout,
     coreComponents,

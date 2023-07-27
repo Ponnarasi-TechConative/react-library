@@ -138,11 +138,8 @@ export default function SwaggerUI(opts) {
 
     if (fetchedConfig !== null) {
       if (!queryConfig.url && typeof mergedConfig.spec === "object" && Object.keys(mergedConfig.spec).length) {
-        system.specActions.updateUrl("")
         system.specActions.updateLoadingStatus("success")
-        system.specActions.updateSpec(JSON.stringify(mergedConfig.spec))
       } else if (system.specActions.download && mergedConfig.url && !mergedConfig.urls) {
-        system.specActions.updateUrl(mergedConfig.url)
         system.specActions.download(mergedConfig.url)
       }
     }

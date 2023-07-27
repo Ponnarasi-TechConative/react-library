@@ -70,10 +70,7 @@ export default class BaseLayout extends React.Component {
       )
     }
 
-    const schemes = specSelectors.schemes()
 
-    const hasSchemes = schemes && schemes.size
-    const hasSecurityDefinitions = !!specSelectors.securityDefinitions()
     const handleClick = () => {
       alert('Button Clicked')
     }

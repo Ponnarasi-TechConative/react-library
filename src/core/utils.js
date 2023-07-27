@@ -20,7 +20,6 @@ import eq from "lodash/eq"
 import isFunction from "lodash/isFunction"
 import win from "./window"
 import cssEscape from "css.escape"
-import getParameterSchema from "../helpers/get-parameter-schema"
 import randomBytes from "randombytes"
 import shaJs from "sha.js"
 
@@ -595,10 +594,7 @@ export const validateParam = (param, value, { isOAS3 = false, bypassRequiredChec
 
   let paramRequired = param.get("required")
 
-  let {
-    schema: paramDetails,
-    parameterContentMediaType
-  } = getParameterSchema(param, { isOAS3 })
+  
 
   return validateValueBySchema(value, paramDetails, paramRequired, bypassRequiredCheck, parameterContentMediaType)
 }

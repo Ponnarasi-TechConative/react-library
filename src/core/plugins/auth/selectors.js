@@ -11,7 +11,7 @@ export const shownDefinitions = createSelector(
 export const definitionsToAuthorize = createSelector(
     state,
     () => ( { specSelectors } ) => {
-      let definitions = specSelectors.securityDefinitions() || Map({})
+      let definitions =  Map({})
       let list = List()
 
       //todo refactor
@@ -29,26 +29,12 @@ export const definitionsToAuthorize = createSelector(
 
 export const getDefinitionsByNames = ( state, securities ) => ( { specSelectors } ) => {
   console.warn("WARNING: getDefinitionsByNames is deprecated and will be removed in the next major version.")
-  let securityDefinitions = specSelectors.securityDefinitions()
   let result = List()
 
   securities.valueSeq().forEach( (names) => {
     let map = Map()
     names.entrySeq().forEach( ([name, scopes]) => {
-      let definition = securityDefinitions.get(name)
-      let allowedScopes
-
-      if ( definition.get("type") === "oauth2" && scopes.size ) {
-        allowedScopes = definition.get("scopes")
-
-        allowedScopes.keySeq().forEach( (key) => {
-          if ( !scopes.contains(key) ) {
-            allowedScopes = allowedScopes.delete(key)
-          }
-        })
-
-        definition = definition.set("allowedScopes", allowedScopes)
-      }
+      let definition = ''
 
       map = map.set(name, definition)
     })

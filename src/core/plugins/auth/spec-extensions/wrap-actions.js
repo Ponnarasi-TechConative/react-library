@@ -2,7 +2,6 @@
 export const execute = ( oriAction, { authSelectors, specSelectors }) => ({ path, method, operation, extras }) => {
   let securities = {
     authorized: authSelectors.authorized() && authSelectors.authorized().toJS(),
-    definitions: specSelectors.securityDefinitions() && specSelectors.securityDefinitions().toJS(),
     specSecurity:  specSelectors.security() && specSelectors.security().toJS()
   }
 

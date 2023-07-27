@@ -7,7 +7,6 @@ import { execute, buildRequest } from "swagger-client/es/execute"
 import Http, { makeHttp, serializeRes } from "swagger-client/es/http"
 import { makeResolveSubtree } from "swagger-client/es/subtree-resolver"
 import { opId } from "swagger-client/es/helpers"
-import { loaded } from "./configs-wrap-actions"
 
 export default function({ configs, getConfigs }) {
   return {
@@ -46,7 +45,6 @@ export default function({ configs, getConfigs }) {
     statePlugins: {
       configs: {
         wrapActions: {
-          loaded,
         }
       }
     },

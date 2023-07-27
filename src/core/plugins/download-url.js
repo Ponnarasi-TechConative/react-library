@@ -9,7 +9,7 @@ export default function downloadUrlPlugin (toolbox) {
     download: (url)=> ({ errActions, specSelectors, specActions, getConfigs }) => {
       let { fetch } = fn
       const config = getConfigs()
-      url = url || specSelectors.url()
+      url = url 
       specActions.updateLoadingStatus("loading")
       errActions.clear({source: "fetch"})
       fetch({
@@ -32,10 +32,7 @@ export default function downloadUrlPlugin (toolbox) {
           return
         }
         specActions.updateLoadingStatus("success")
-        specActions.updateSpec(res.text)
-        if(specSelectors.url() !== url) {
-          specActions.updateUrl(url)
-        }
+       
       }
 
       function checkPossibleFailReasons() {

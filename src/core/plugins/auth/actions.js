@@ -177,9 +177,7 @@ export const authorizeRequest = ( data ) => ( { fn, getConfigs, authActions, err
   if (specSelectors.isOAS3()) {
     let finalServerUrl = oas3Selectors.serverEffectiveValue(oas3Selectors.selectedServer())
     parsedUrl = parseUrl(url, finalServerUrl, true)
-  } else {
-    parsedUrl = parseUrl(url, specSelectors.url(), true)
-  }
+  } 
 
   if(typeof additionalQueryStringParams === "object") {
     parsedUrl.query = Object.assign({}, parsedUrl.query, additionalQueryStringParams)
