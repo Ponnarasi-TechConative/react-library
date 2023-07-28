@@ -5,6 +5,10 @@
   "dependencies": {
     "@babel/runtime-corejs3": "^7.22.6",
     "@braintree/sanitize-url": "=6.0.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.5",
+    "@mui/material": "^5.14.2",
     "base64-js": "^1.5.1",
     "classnames": "^2.3.1",
     "css.escape": "1.5.1",
@@ -47,7 +51,8 @@
     "eject": "react-scripts eject",
     "build:core": "webpack --color --config webpack/core.babel.js",
     "build:bundle": "webpack --color --config webpack/bundle.babel.js",
-    "dev": "webpack serve --config webpack/dev.babel.js"
+    "dev": "webpack serve --config webpack/dev.babel.js",
+    "build-stylesheets": "webpack --color --config webpack/stylesheets.babel.js"
   },
   "eslintConfig": {
     "extends": [

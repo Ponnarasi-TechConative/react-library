@@ -1,4 +1,4 @@
-import yamlConfig from "root/swagger-config.yaml"
+import yamlConfig from "root/rest-import-config.yaml"
 import { parseYamlConfig } from "./helpers"
 import * as actions from "./actions"
 import * as specActions from "./spec-actions"
