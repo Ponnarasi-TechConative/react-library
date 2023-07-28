@@ -101,7 +101,7 @@ export default function buildConfig(
         extensions: [".web.js", ".js", ".jsx", ".json", ".less"],
         alias: {
           // these aliases make sure that we don't bundle same libraries twice
-          // when the versions of these libraries diverge between swagger-js and swagger-ui
+          // when the versions of these libraries diverge between swagger-js and rest-import-ui
           "@babel/runtime-corejs3": path.resolve(
             __dirname,
             "..",

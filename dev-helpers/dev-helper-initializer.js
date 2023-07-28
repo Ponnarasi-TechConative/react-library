@@ -1,17 +1,16 @@
 /* eslint-disable no-undef */
 window.onload = function() {
-  window["SwaggerUIBundle"] = window["swagger-ui-bundle"]
-  window["SwaggerUIStandalonePreset"] = window["swagger-ui-standalone-preset"]
+  window["RestImportBundle"] = window["rest-import-ui-bundle"]
+  window["RestImportStandalonePreset"] = window["rest-import-ui-standalone-preset"]
   // Build a system
-  const ui = SwaggerUIBundle({
-    url: "https://petstore.swagger.io/v2/swagger.json",
-    dom_id: "#swagger-ui",
+  const ui = RestImportBundle({
+    dom_id: "#rest-import-ui",
     presets: [
-      SwaggerUIBundle.presets.apis,
-      SwaggerUIStandalonePreset
+      RestImportBundle.presets.apis,
+      RestImportStandalonePreset
     ],
     plugins: [
-      SwaggerUIBundle.plugins.DownloadUrl
+      RestImportBundle.plugins.DownloadUrl
     ],
     // requestSnippetsEnabled: true,
     layout: "StandaloneLayout"
