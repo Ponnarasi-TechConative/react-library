@@ -1,7 +1,6 @@
 /**
  * @prettier
  */
-import err from "core/plugins/err"
 import layout from "core/plugins/layout"
 import spec from "core/plugins/spec"
 import view from "core/plugins/view"
@@ -33,7 +32,6 @@ export default function () {
     logs,
     view,
     spec,
-    err,
     layout,
     coreComponents,
     formComponents,

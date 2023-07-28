@@ -34,7 +34,7 @@ export default class BaseLayout extends React.Component {
           </Row>
           <Increment />
           <div>1st Commit : 16:20</div>
-      
+          <div>2nd Commit : 16:29</div>
 
       </div>
     )
