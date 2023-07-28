@@ -4,7 +4,6 @@
 import layout from "core/plugins/layout"
 import spec from "core/plugins/spec"
 import view from "core/plugins/view"
-import requestSnippets from "core/plugins/request-snippets"
 import logs from "core/plugins/logs"
 import auth from "core/plugins/auth"
 import configsPlugin from "core/plugins/configs"
@@ -37,7 +36,6 @@ export default function () {
     coreComponents,
     formComponents,
     auth,
-    requestSnippets,
     safeRender(),
   ]
 }

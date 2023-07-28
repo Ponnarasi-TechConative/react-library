@@ -69,7 +69,6 @@ export default function RESTIMPORTUI(opts) {
         spec: "",
         url: constructorConfig.url
       },
-      requestSnippets: constructorConfig.requestSnippets
     }, constructorConfig.initialState)
   }
 
