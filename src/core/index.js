@@ -12,7 +12,7 @@ export default function RESTIMPORTUI(opts) {
     domNode: null,
     spec: {},
     layout: "BaseLayout",
-    validatorUrl: "https://validator.swagger.io/validator",
+    validatorUrl: "",
     configs: {},
     custom: {},
     displayRequestDuration: false,
@@ -62,7 +62,6 @@ export default function RESTIMPORTUI(opts) {
     // Inline Plugin
     fn: { },
     components: { },
-
     syntaxHighlight: {
       activated: true,
       theme: "agate"
@@ -124,7 +123,8 @@ export default function RESTIMPORTUI(opts) {
   const downloadSpec = (fetchedConfig) => {
     let localConfig = system.specSelectors.getLocalConfig ? system.specSelectors.getLocalConfig() : {}
     let mergedConfig = deepExtend({}, localConfig, constructorConfig, fetchedConfig || {}, queryConfig)
-
+    console.log(mergedConfig.url)
+    console.log(mergedConfig.value)
     // deep extend mangles domNode, we need to set it manually
     if(domNode) {
       mergedConfig.domNode = domNode

@@ -1,4 +1,4 @@
 ---
-url: "https://petstore.swagger.io/v2/swagger.json"
+url: ""
 dom_id: "#rest-import-ui"
-validatorUrl: "https://validator.swagger.io/validator"
+validatorUrl: ""

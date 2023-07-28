@@ -16,8 +16,6 @@ export default class StandaloneLayout extends React.Component {
   render() {
     const { getComponent } = this.props
     const Container = getComponent("Container")
-    const Col = getComponent("Col")
-    const Topbar = getComponent("Topbar", true)
     const BaseLayout = getComponent("BaseLayout", true)
 
     return (
