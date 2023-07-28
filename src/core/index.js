@@ -16,6 +16,28 @@ export default function RESTIMPORTUI(opts) {
     configs: {},
     custom: {},
     displayRequestDuration: false,
+    deepLinking: false,
+    tryItOutEnabled: false,
+    requestInterceptor: (a => a),
+    responseInterceptor: (a => a),
+    showMutatedRequest: true,
+    defaultModelRendering: "example",
+    defaultModelExpandDepth: 1,
+    defaultModelsExpandDepth: 1,
+    showExtensions: false,
+    showCommonExtensions: false,
+    withCredentials: undefined,
+    supportedSubmitMethods: [
+      "get",
+      "put",
+      "post",
+      "delete",
+      "options",
+      "head",
+      "patch",
+      "trace"
+    ],
+    queryConfigEnabled: false,
 
     // Initial set of plugins ( TODO rename this, or refactor - we don't need presets _and_ plugins. Its just there for performance.
     // Instead, we can compile the first plugin ( it can be a collection of plugins ), then batch the rest.

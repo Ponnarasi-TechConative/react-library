@@ -25,7 +25,7 @@ export default class BaseLayout extends React.Component {
       alert('Button Clicked')
     }
     return (
-      <div className="rest-import-ui">
+      <div className="swrest-import-ui">
 
         <Row className="information-container">
             <Col mobile={12}>
@@ -33,13 +33,10 @@ export default class BaseLayout extends React.Component {
             </Col>
           </Row>
           <Increment />
-          <div>1st Commit : 28-07 - 11:53</div>
-          <div>2nd Commit : 28-07 - 1:04</div>
-          <div>3rd Commit : 28-07 - 2:32</div>
-          <div>4rd Commit : 28-07 - 2:46</div>
-          <div>5th Commit : 28-07 - 2:53</div>
-          <div>6th Commit : 28-07 - 2:58</div>
-          <div>7th Commit : 28-07 - 3:31</div>
+          <div>1st Commit : 16:20</div>
+          <div>2nd Commit : 16:29</div>
+          <div>3rd Commit : 16:45</div>
+          <div>4th Commit : 16:45</div>
 
       </div>
     )
