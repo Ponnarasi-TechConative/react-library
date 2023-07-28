@@ -5,7 +5,6 @@ import layout from "core/plugins/layout"
 import spec from "core/plugins/spec"
 import view from "core/plugins/view"
 import logs from "core/plugins/logs"
-import auth from "core/plugins/auth"
 import configsPlugin from "core/plugins/configs"
 import safeRender from "core/plugins/safe-render"
 import App from "core/components/app"
@@ -34,7 +33,6 @@ export default function () {
     layout,
     coreComponents,
     formComponents,
-    auth,
     safeRender(),
   ]
 }
