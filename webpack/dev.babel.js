@@ -23,13 +23,13 @@ const devConfig = configBuilder(
   {
     mode: "development",
     entry: {
-      "swagger-ui-bundle": [
+      "rest-import-ui-bundle": [
         "./src/core/index.js",
       ],
-      "swagger-ui-standalone-preset": [
+      "rest-import-ui-standalone-preset": [
         "./src/standalone/index.js",
       ],
-      "swagger-ui": "./src/style/main.scss",
+      "rest-import-ui": "./src/style/main.scss",
       vendors: ["react-refresh/runtime"],
     },
 
@@ -99,7 +99,7 @@ const devConfig = configBuilder(
         template: path.join(projectBasePath, "dev-helpers", "index.html"),
       }),
       new HtmlWebpackSkipAssetsPlugin({
-        skipAssets: [/swagger-ui\.js/],
+        skipAssets: [/rest-import-ui\.js/],
       }),
     ].filter(Boolean),
 

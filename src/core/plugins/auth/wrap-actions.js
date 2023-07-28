@@ -6,7 +6,7 @@
  * `authorize` and `logout` wrapped actions provide capacity
  * to persist cookie based apiKey in document.cookie.
  *
- * `persistAuthorization` SwaggerUI options needs to set to `true`
+ * `persistAuthorization` RESTIMPORTUI options needs to set to `true`
  * for document.cookie persistence to work.
  */
 export const authorize = (oriAction, system) => (payload) => {
