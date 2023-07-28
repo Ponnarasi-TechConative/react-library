@@ -3,7 +3,6 @@ import deepExtend from "deep-extend"
 import System from "./system"
 import ApisPreset from "./presets/apis"
 import AllPlugins from "./plugins/all"
-import win from "./window"
 
 
 export default function RESTIMPORTUI(opts) {
@@ -13,11 +12,8 @@ export default function RESTIMPORTUI(opts) {
     dom_id: null, // eslint-disable-line camelcase
     domNode: null,
     spec: {},
-    url: "",
     layout: "BaseLayout",
-    docExpansion: "list",
     validatorUrl: "https://validator.swagger.io/validator",
-    oauth2RedirectUrl: `${window.location.protocol}//${window.location.host}${window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/"))}/oauth2-redirect.html`,
     configs: {},
     custom: {},
     displayRequestDuration: false,

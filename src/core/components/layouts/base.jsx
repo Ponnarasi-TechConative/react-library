@@ -25,7 +25,7 @@ export default class BaseLayout extends React.Component {
       alert('Button Clicked')
     }
     return (
-      <div className="swagger-ui">
+      <div className="rest-import-ui">
 
         <Row className="information-container">
             <Col mobile={12}>
@@ -34,6 +34,7 @@ export default class BaseLayout extends React.Component {
           </Row>
           <Increment />
           <div>1st Commit : 28-07 - 11:53</div>
+          <div>1st Commit : 28-07 - 1:04</div>
     
 
       </div>
