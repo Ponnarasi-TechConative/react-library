@@ -9,7 +9,6 @@ import requestSnippets from "core/plugins/request-snippets"
 import logs from "core/plugins/logs"
 import swaggerJs from "core/plugins/swagger-js"
 import auth from "core/plugins/auth"
-import downloadUrlPlugin from "core/plugins/download-url"
 import configsPlugin from "core/plugins/configs"
 import safeRender from "core/plugins/safe-render"
 import App from "core/components/app"
@@ -42,7 +41,6 @@ export default function () {
     formComponents,
     swaggerJs,
     auth,
-    downloadUrlPlugin,
     requestSnippets,
     safeRender(),
   ]
