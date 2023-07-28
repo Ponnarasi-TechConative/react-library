@@ -21,7 +21,7 @@ const result = configBuilder(
     output: {
       globalObject: "this",
       library: {
-        name: "SwaggerUICore",
+        name: "RESTIMPORTUICore",
         export: "default",
       },
     },

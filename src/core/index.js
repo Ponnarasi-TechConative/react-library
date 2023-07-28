@@ -3,38 +3,18 @@ import deepExtend from "deep-extend"
 import System from "./system"
 import ApisPreset from "./presets/apis"
 import AllPlugins from "./plugins/all"
-import win from "./window"
 
-// eslint-disable-next-line no-undef
-const { GIT_DIRTY, GIT_COMMIT, PACKAGE_VERSION, BUILD_TIME } = buildInfo
-
-export default function SwaggerUI(opts) {
-
-  win.versions = win.versions || {}
-  win.versions.swaggerUi = {
-    version: PACKAGE_VERSION,
-    gitRevision: GIT_COMMIT,
-    gitDirty: GIT_DIRTY,
-    buildTimestamp: BUILD_TIME,
-  }
+export default function RESTIMPORTUI(opts) {
 
   const defaults = {
     // Some general settings, that we floated to the top
     dom_id: null, // eslint-disable-line camelcase
     domNode: null,
     spec: {},
-    url: "",
-    urls: null,
     layout: "BaseLayout",
-    docExpansion: "list",
-    maxDisplayedTags: null,
-    filter: null,
     validatorUrl: "https://validator.swagger.io/validator",
-    oauth2RedirectUrl: `${window.location.protocol}//${window.location.host}${window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/"))}/oauth2-redirect.html`,
-    persistAuthorization: false,
     configs: {},
     custom: {},
-    displayOperationId: false,
     displayRequestDuration: false,
     deepLinking: false,
     tryItOutEnabled: false,
@@ -185,8 +165,6 @@ export default function SwaggerUI(opts) {
     system.specActions.getConfigByUrl({
       url: configUrl,
       loadRemoteConfig: true,
-      requestInterceptor: constructorConfig.requestInterceptor,
-      responseInterceptor: constructorConfig.responseInterceptor,
     }, downloadSpec)
   } else {
     return downloadSpec()
@@ -196,9 +174,9 @@ export default function SwaggerUI(opts) {
 }
 
 // Add presets
-SwaggerUI.presets = {
+RESTIMPORTUI.presets = {
   apis: ApisPreset,
 }
 
 // All Plugins
-SwaggerUI.plugins = AllPlugins
+RESTIMPORTUI.plugins = AllPlugins
