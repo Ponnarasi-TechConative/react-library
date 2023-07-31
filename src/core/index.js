@@ -93,7 +93,6 @@ export default function RESTIMPORTUI(opts) {
       },
     }, constructorConfig.initialState)
   }
-  console.log(storeConfigs)
   if(constructorConfig.initialState) {
     // if the user sets a key as `undefined`, that signals to us that we
     // should delete the key entirely.

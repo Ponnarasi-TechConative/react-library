@@ -125,7 +125,6 @@ export default class Store {
     }
   }
   getObjValue() {
-    console.log(this.system.objValue)
     return {
       objValue: this.system.objValue
     }
@@ -135,7 +134,6 @@ export default class Store {
     this.system.configs = configs
   }
   setObjValue(objVal) {
-    console.log(objVal)
     this.system.objValue = objVal
   }
 
