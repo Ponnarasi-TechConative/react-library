@@ -108,25 +108,16 @@ export default function RESTIMPORTUI(opts) {
     }
   }
 
-  let inlinePlugin = ()=> {
-    return {
-      fn: constructorConfig.fn,
-      components: constructorConfig.components,
-      state: constructorConfig.state,
-    }
-  }
+ 
 
   var store = new System(storeConfigs)
-  store.register([constructorConfig.plugins, inlinePlugin])
 
   var system = store.getSystem()
-
   const downloadSpec = (fetchedConfig) => {
     let localConfig = system.specSelectors.getLocalConfig ? system.specSelectors.getLocalConfig() : {}
     let mergedConfig = deepExtend({}, localConfig, constructorConfig, fetchedConfig || {}, queryConfig)
     console.log(mergedConfig.url)
     console.log(mergedConfig.value)
-    
     // deep extend mangles domNode, we need to set it manually
     if(domNode) {
       mergedConfig.domNode = domNode

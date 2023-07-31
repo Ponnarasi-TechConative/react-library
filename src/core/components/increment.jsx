@@ -1,7 +1,10 @@
 import React, { useState } from "react"
+import System from "../system"
 
 const Increment = () => {
-  
+  var store = new System()
+  const system = store.getObjValue()
+  console.log(system)
   const [count, setCount] = useState(0)
   const handleIncrement = () =>{
     setCount(count + 1)

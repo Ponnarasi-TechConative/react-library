@@ -40,7 +40,8 @@ export default class Store {
         fn: {},
         components: {},
         rootInjects: {},
-        statePlugins: {}
+        statePlugins: {},
+        objValue:{}
       },
       boundSystem: {},
       toolbox: {}
@@ -86,7 +87,8 @@ export default class Store {
         this.getWrappedAndBoundSelectors(getState, this.getSystem),
         this.getStateThunks(getState),
         this.getFn(),
-        this.getConfigs()
+        this.getConfigs(),
+        this.getObjValue()
      )
 
     if(buildReducer)
@@ -104,6 +106,7 @@ export default class Store {
       getComponents: this.getComponents.bind(this),
       getState: this.getStore().getState,
       getConfigs: this._getConfigs.bind(this),
+      getObjValue: this._getObjValue.bind(this),
       Im,
       React
     }, this.system.rootInjects || {})
@@ -112,15 +115,28 @@ export default class Store {
   _getConfigs(){
     return this.system.configs
   }
+  _getObjValue(){
+    return this.system.configs
+  }
 
   getConfigs() {
     return {
       configs: this.system.configs
     }
   }
+  getObjValue() {
+    console.log(this.system.objValue)
+    return {
+      objValue: this.system.objValue
+    }
+  }
 
   setConfigs(configs) {
     this.system.configs = configs
+  }
+  setObjValue(objVal) {
+    console.log(objVal)
+    this.system.objValue = objVal
   }
 
   rebuildReducer() {
