@@ -50,7 +50,7 @@ export default class BaseLayout extends React.Component {
       <Switch {...label} />
       <Switch {...label} disabled defaultChecked />
       <Switch {...label} disabled />
-      <div>Working @ 6 times</div>
+      <div>Working @ 7 times</div>
     </div>
       </div>
     );

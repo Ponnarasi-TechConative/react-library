@@ -1,5 +1,4 @@
 import { pascalCaseFilename } from "core/utils"
-import SafeRender from "core/plugins/safe-render"
 
 const request = require.context(".", true, /\.jsx?$/)
 
@@ -21,4 +20,3 @@ request.keys().forEach( function( key ){
   allPlugins[pascalCaseFilename(key)] = mod.default ? mod.default : mod
 })
 
-allPlugins.SafeRender = SafeRender
