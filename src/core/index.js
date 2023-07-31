@@ -11,6 +11,7 @@ export default function RESTIMPORTUI(opts) {
     dom_id: null, // eslint-disable-line camelcase
     domNode: null,
     spec: {},
+    value:{},
     layout: "BaseLayout",
     validatorUrl: "",
     configs: {},
@@ -74,13 +75,13 @@ export default function RESTIMPORTUI(opts) {
   delete opts.domNode
 
   const constructorConfig = deepExtend({}, defaults, opts, queryConfig)
-
   const storeConfigs = {
     system: {
       configs: constructorConfig.configs
     },
     plugins: constructorConfig.presets,
     pluginsOptions: constructorConfig.pluginsOptions,
+    ObjValue : constructorConfig.value,
     state: deepExtend({
       layout: {
         layout: constructorConfig.layout,
@@ -92,7 +93,7 @@ export default function RESTIMPORTUI(opts) {
       },
     }, constructorConfig.initialState)
   }
-
+  console.log(storeConfigs)
   if(constructorConfig.initialState) {
     // if the user sets a key as `undefined`, that signals to us that we
     // should delete the key entirely.
@@ -125,12 +126,14 @@ export default function RESTIMPORTUI(opts) {
     let mergedConfig = deepExtend({}, localConfig, constructorConfig, fetchedConfig || {}, queryConfig)
     console.log(mergedConfig.url)
     console.log(mergedConfig.value)
+    
     // deep extend mangles domNode, we need to set it manually
     if(domNode) {
       mergedConfig.domNode = domNode
     }
 
     store.setConfigs(mergedConfig)
+
     system.configsActions.loaded()
 
     if (fetchedConfig !== null) {
@@ -155,7 +158,7 @@ export default function RESTIMPORTUI(opts) {
     } else {
       console.error("Skipped rendering: no `dom_id` or `domNode` was specified")
     }
-
+   
     return system
   }
 

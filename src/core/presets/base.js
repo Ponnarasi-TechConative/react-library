@@ -2,7 +2,6 @@
  * @prettier
  */
 import layout from "core/plugins/layout"
-import spec from "core/plugins/spec"
 import view from "core/plugins/view"
 import logs from "core/plugins/logs"
 import configsPlugin from "core/plugins/configs"
@@ -29,7 +28,6 @@ export default function () {
     configsPlugin,
     logs,
     view,
-    spec,
     layout,
     coreComponents,
     formComponents,
