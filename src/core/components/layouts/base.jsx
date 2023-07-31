@@ -12,16 +12,14 @@ const label = { inputProps: { 'aria-label': 'Switch demo' } };
 export default class BaseLayout extends React.Component {
 
   static propTypes = {
-    errSelectors: PropTypes.object.isRequired,
     errActions: PropTypes.object.isRequired,
-    specSelectors: PropTypes.object.isRequired,
     oas3Selectors: PropTypes.object.isRequired,
     oas3Actions: PropTypes.object.isRequired,
     getComponent: PropTypes.func.isRequired,
   };
 
   render() {
-    const { errSelectors, specSelectors, getComponent } = this.props;
+    const { getComponent } = this.props;
     const Row = getComponent("Row");
     const Col = getComponent("Col");
     const Increment = getComponent("increment", true);
@@ -50,7 +48,7 @@ export default class BaseLayout extends React.Component {
       <Switch {...label} />
       <Switch {...label} disabled defaultChecked />
       <Switch {...label} disabled />
-      <div>Working @ 7 times</div>
+      <div>Working @ 10 times</div>
     </div>
       </div>
     );
