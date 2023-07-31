@@ -52,6 +52,7 @@
     "build:bundle": "webpack --color --config webpack/bundle.babel.js",
     "dev": "webpack serve --config webpack/dev.babel.js",
     "build-stylesheets": "webpack --color --config webpack/stylesheets.babel.js"
+
   },
   "eslintConfig": {
     "extends": [
